@@ -72,6 +72,8 @@ import TooltipPage from './pages/component/TooltipPage';
 import AccordionPage from './pages/component/AccordionPage';
 import IconsPage from './pages/component/IconsPage';
 
+import LoginPage from './pages/auth/login';
+
 function App() {
   const location = useLocation();
 
@@ -152,6 +154,7 @@ function App() {
         <Route path="/component/tooltip" element={<TooltipPage />} />
         <Route path="/component/accordion" element={<AccordionPage />} />
         <Route path="/component/icons" element={<IconsPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
