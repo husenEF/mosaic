@@ -6,7 +6,7 @@ const BgRotate = ({ children }) => {
 };
 const LoginPage = () => {
   return (
-    <div className="grid h-screen place-items-center bg-red-500 ">
+    <div className="grid h-screen place-items-center bg-animate">
       <div className="p-4 flex flex-col h-60 justify-center md:w-[305px] min-h- rounded-xl group sm:flex bg-white bg-opacity-50 shadow-xl">
         <h1 className="text-white mb-3 text-6xl">Hello</h1>
         <input
