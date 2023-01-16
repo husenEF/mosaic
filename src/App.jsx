@@ -73,6 +73,7 @@ import AccordionPage from './pages/component/AccordionPage';
 import IconsPage from './pages/component/IconsPage';
 
 import LoginPage from './pages/auth/login';
+import PrivateLayout from './components/Layout/PrivateLayout';
 
 function App() {
   const location = useLocation();
@@ -86,7 +87,10 @@ function App() {
   return (
     <>
       <Routes>
-        <Route exact path="/" element={<Dashboard />} />
+        <Route element={<PrivateLayout />}>
+          <Route index element={<Dashboard />} />
+        </Route>
+        {/* <Route exact path="/" element={<Dashboard />} /> */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/*" element={<PageNotFound />} />
         {/* original template */}

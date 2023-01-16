@@ -7,12 +7,15 @@ module.exports = {
       colors: {
         primary: {
           default: '#B66E91',
+          20: '#A5A6F6',
           50: '#B66E91',
+          70: '#48062E',
         },
         secondary: {
           default: '#F9BFDC',
           50: '#F9BFDC',
           70: '#FCDDEC',
+          80: '#F178B6',
         },
       },
       boxShadow: {

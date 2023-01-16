@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { LockClosedIcon } from '@heroicons/react/24/outline';
 
 import BoxAnimate from '../../components/box/animate';
@@ -8,13 +9,16 @@ import { delay } from '../../utils/Utils';
 import './auth.scss';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const [isSubmit, setSumbit] = useState(false);
 
   const handlingSubmit = (e) => {
     e.preventDefault();
     setSumbit(true);
-    delay(3000).then(() => setSumbit(false));
-
+    delay(3000).then(() => {
+      setSumbit(false);
+      navigate('/', { replace: true });
+    });
     return false;
   };
 
