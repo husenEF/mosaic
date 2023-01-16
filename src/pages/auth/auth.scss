@@ -1,41 +1,5 @@
-.bg-animate::after,
-.bg-animate::before {
-    mix-blend-mode: screen;
-    animation: 30s -27s move infinite ease-in-out alternate;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 10px;
-    height: 10px;
-    content: " ";
-    border-radius: 100%;
+.rect {
+    box-shadow: none;
+    background: radial-gradient(circle at center 101%, transparent 60px, #F9BFDC 60.5px);
 }
 
-.bg-animate {
-    background: conic-gradient(from 218.87deg at 100% 110.9%, #a5a6f6 0deg, #b66e91 84.17deg, #a5a6f6 360deg);
-    &:before {
-        top: 80%;
-        left: 80%;
-        content: " ";
-        background: rgba(241, 120, 182, 0.3) !important;
-        opacity: 0.4;
-        box-shadow: 0px 0px 10px 10px rgba(241, 120, 182, 0.3);
-    }
-    &:after {
-        top: 30%;
-        left: 30%;
-        content: " ";
-        background: rgb(0 0 255 / 100%) !important;
-        opacity: 0.4;
-        box-shadow: 0px 0px 10px 10px rgb(0 0 255 / 100%);
-    }
-}
-
-@keyframes move {
-    from {
-        transform: rotate(0deg) scale(12) translateX(-20px);
-    }
-    to {
-        transform: rotate(360deg) scale(18) translateX(20px);
-    }
-}

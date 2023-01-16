@@ -87,75 +87,106 @@ function App() {
     <>
       <Routes>
         <Route exact path="/" element={<Dashboard />} />
-        <Route path="/dashboard/analytics" element={<Analytics />} />
-        <Route path="/dashboard/fintech" element={<Fintech />} />
-        <Route path="/ecommerce/customers" element={<Customers />} />
-        <Route path="/ecommerce/orders" element={<Orders />} />
-        <Route path="/ecommerce/invoices" element={<Invoices />} />
-        <Route path="/ecommerce/shop" element={<Shop />} />
-        <Route path="/ecommerce/shop-2" element={<Shop2 />} />
-        <Route path="/ecommerce/product" element={<Product />} />
-        <Route path="/ecommerce/cart" element={<Cart />} />
-        <Route path="/ecommerce/cart-2" element={<Cart2 />} />
-        <Route path="/ecommerce/cart-3" element={<Cart3 />} />
-        <Route path="/ecommerce/pay" element={<Pay />} />
-        <Route path="/campaigns" element={<Campaigns />} />
-        <Route path="/community/users-tabs" element={<UsersTabs />} />
-        <Route path="/community/users-tiles" element={<UsersTiles />} />
-        <Route path="/community/profile" element={<Profile />} />
-        <Route path="/community/feed" element={<Feed />} />
-        <Route path="/community/forum" element={<Forum />} />
-        <Route path="/community/forum-post" element={<ForumPost />} />
-        <Route path="/community/meetups" element={<Meetups />} />
-        <Route path="/community/meetups-post" element={<MeetupsPost />} />
-        <Route path="/finance/cards" element={<CreditCards />} />
-        <Route path="/finance/transactions" element={<Transactions />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/*" element={<PageNotFound />} />
+        {/* original template */}
+        <Route path="/template" element={<Dashboard />} />
+        <Route path="/template/dashboard/analytics" element={<Analytics />} />
+        <Route path="/template/dashboard/fintech" element={<Fintech />} />
+        <Route path="/template/ecommerce/customers" element={<Customers />} />
+        <Route path="/template/ecommerce/orders" element={<Orders />} />
+        <Route path="/template/ecommerce/invoices" element={<Invoices />} />
+        <Route path="/template/ecommerce/shop" element={<Shop />} />
+        <Route path="/template/ecommerce/shop-2" element={<Shop2 />} />
+        <Route path="/template/ecommerce/product" element={<Product />} />
+        <Route path="/template/ecommerce/cart" element={<Cart />} />
+        <Route path="/template/ecommerce/cart-2" element={<Cart2 />} />
+        <Route path="/template/ecommerce/cart-3" element={<Cart3 />} />
+        <Route path="/template/ecommerce/pay" element={<Pay />} />
+        <Route path="/template/campaigns" element={<Campaigns />} />
+        <Route path="/template/community/users-tabs" element={<UsersTabs />} />
         <Route
-          path="/finance/transaction-details"
+          path="/template/community/users-tiles"
+          element={<UsersTiles />}
+        />
+        <Route path="/template/community/profile" element={<Profile />} />
+        <Route path="/template/community/feed" element={<Feed />} />
+        <Route path="/template/community/forum" element={<Forum />} />
+        <Route path="/template/community/forum-post" element={<ForumPost />} />
+        <Route path="/template/community/meetups" element={<Meetups />} />
+        <Route
+          path="/template/community/meetups-post"
+          element={<MeetupsPost />}
+        />
+        <Route path="/template/finance/cards" element={<CreditCards />} />
+        <Route
+          path="/template/finance/transactions"
+          element={<Transactions />}
+        />
+        <Route
+          path="/template/finance/transaction-details"
           element={<TransactionDetails />}
         />
-        <Route path="/job/job-listing" element={<JobListing />} />
-        <Route path="/job/job-post" element={<JobPost />} />
-        <Route path="/job/company-profile" element={<CompanyProfile />} />
-        <Route path="/messages" element={<Messages />} />
-        <Route path="/tasks/kanban" element={<TasksKanban />} />
-        <Route path="/tasks/list" element={<TasksList />} />
-        <Route path="/inbox" element={<Inbox />} />
-        <Route path="/calendar" element={<Calendar />} />
-        <Route path="/settings/account" element={<Account />} />
-        <Route path="/settings/notifications" element={<Notifications />} />
-        <Route path="/settings/apps" element={<Apps />} />
-        <Route path="/settings/plans" element={<Plans />} />
-        <Route path="/settings/billing" element={<Billing />} />
-        <Route path="/settings/feedback" element={<Feedback />} />
-        <Route path="/utility/changelog" element={<Changelog />} />
-        <Route path="/utility/roadmap" element={<Roadmap />} />
-        <Route path="/utility/faqs" element={<Faqs />} />
-        <Route path="/utility/empty-state" element={<EmptyState />} />
-        <Route path="/utility/404" element={<PageNotFound />} />
-        <Route path="/utility/knowledge-base" element={<KnowledgeBase />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/onboarding-01" element={<Onboarding01 />} />
-        <Route path="/onboarding-02" element={<Onboarding02 />} />
-        <Route path="/onboarding-03" element={<Onboarding03 />} />
-        <Route path="/onboarding-04" element={<Onboarding04 />} />
-        <Route path="/component/button" element={<ButtonPage />} />
-        <Route path="/component/form" element={<FormPage />} />
-        <Route path="/component/dropdown" element={<DropdownPage />} />
-        <Route path="/component/alert" element={<AlertPage />} />
-        <Route path="/component/modal" element={<ModalPage />} />
-        <Route path="/component/pagination" element={<PaginationPage />} />
-        <Route path="/component/tabs" element={<TabsPage />} />
-        <Route path="/component/breadcrumb" element={<BreadcrumbPage />} />
-        <Route path="/component/badge" element={<BadgePage />} />
-        <Route path="/component/avatar" element={<AvatarPage />} />
-        <Route path="/component/tooltip" element={<TooltipPage />} />
-        <Route path="/component/accordion" element={<AccordionPage />} />
-        <Route path="/component/icons" element={<IconsPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="*" element={<PageNotFound />} />
+        <Route path="/template/job/job-listing" element={<JobListing />} />
+        <Route path="/template/job/job-post" element={<JobPost />} />
+        <Route
+          path="/template/job/company-profile"
+          element={<CompanyProfile />}
+        />
+        <Route path="/template/messages" element={<Messages />} />
+        <Route path="/template/tasks/kanban" element={<TasksKanban />} />
+        <Route path="/template/tasks/list" element={<TasksList />} />
+        <Route path="/template/inbox" element={<Inbox />} />
+        <Route path="/template/calendar" element={<Calendar />} />
+        <Route path="/template/settings/account" element={<Account />} />
+        <Route
+          path="/template/settings/notifications"
+          element={<Notifications />}
+        />
+        <Route path="/template/settings/apps" element={<Apps />} />
+        <Route path="/template/settings/plans" element={<Plans />} />
+        <Route path="/template/settings/billing" element={<Billing />} />
+        <Route path="/template/settings/feedback" element={<Feedback />} />
+        <Route path="/template/utility/changelog" element={<Changelog />} />
+        <Route path="/template/utility/roadmap" element={<Roadmap />} />
+        <Route path="/template/utility/faqs" element={<Faqs />} />
+        <Route path="/template/utility/empty-state" element={<EmptyState />} />
+        <Route path="/template/utility/404" element={<PageNotFound />} />
+        <Route
+          path="/template/utility/knowledge-base"
+          element={<KnowledgeBase />}
+        />
+        <Route path="/template/signin" element={<Signin />} />
+        <Route path="/template/signup" element={<Signup />} />
+        <Route path="/template/reset-password" element={<ResetPassword />} />
+        <Route path="/template/onboarding-01" element={<Onboarding01 />} />
+        <Route path="/template/onboarding-02" element={<Onboarding02 />} />
+        <Route path="/template/onboarding-03" element={<Onboarding03 />} />
+        <Route path="/template/onboarding-04" element={<Onboarding04 />} />
+        <Route path="/template/component/button" element={<ButtonPage />} />
+        <Route path="/template/component/form" element={<FormPage />} />
+        <Route path="/template/component/dropdown" element={<DropdownPage />} />
+        <Route path="/template/component/alert" element={<AlertPage />} />
+        <Route path="/template/component/modal" element={<ModalPage />} />
+        <Route
+          path="/template/component/pagination"
+          element={<PaginationPage />}
+        />
+        <Route path="/template/component/tabs" element={<TabsPage />} />
+        <Route
+          path="/template/component/breadcrumb"
+          element={<BreadcrumbPage />}
+        />
+        <Route path="/template/component/badge" element={<BadgePage />} />
+        <Route path="/template/component/avatar" element={<AvatarPage />} />
+        <Route path="/template/component/tooltip" element={<TooltipPage />} />
+        <Route
+          path="/template/component/accordion"
+          element={<AccordionPage />}
+        />
+        <Route path="/template/component/icons" element={<IconsPage />} />
+        <Route path="/template/login" element={<LoginPage />} />
+        <Route path="/template/*" element={<PageNotFound />} />
       </Routes>
     </>
   );
