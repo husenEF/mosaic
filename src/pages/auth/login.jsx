@@ -1,28 +1,41 @@
+import { useState } from 'react';
 import { LockClosedIcon } from '@heroicons/react/24/outline';
 
 import BoxAnimate from '../../components/box/animate';
 
+import { delay } from '../../utils/Utils';
+
 import './auth.scss';
 
 const LoginPage = () => {
+  const [isSubmit, setSumbit] = useState(false);
+
+  const handlingSubmit = (e) => {
+    e.preventDefault();
+    setSumbit(true);
+    delay(3000).then(() => setSumbit(false));
+
+    return false;
+  };
+
   return (
     <BoxAnimate className="min-h-screen flex flex-col items-center justify-center">
-      <div className="container mx-auto flex justify-center">
-        <form action="#" className="relative">
-          <div className="flex flex-col bg-opacity-3 shadow-xl px-4 py-8 rounded-md w-full max-w-xs mx-3 sm:mx-0 h-[500px] rect">
+      <div className="grid place-items-center max-w-full">
+        <form action="#" className="relative w-full" onSubmit={handlingSubmit}>
+          <div className="flex flex-col bg-opacity-3 px-4 py-8 rounded-xl w-full max-w-full mx-0 h-[500px] rect bg-opacity-25 max-h-full">
             <div className="basis-1/2 flex justify-end flex-col">
-              <h1 className=" text-white mb-3 text-6xl font-oxigen ">Hello</h1>
+              <h1 className=" text-white mb-3 text-6xl font-oxigen ">Hello,</h1>
             </div>
             <div className="relative">
               <div className="flex flex-col mb-6">
                 <input
-                  className="rounded-full mb-3 p-2 border-none text-center w-full min-w-max bg-white focus:border-none"
+                  className="rounded-full p-2 border-none text-center w-full min-w-max bg-white focus:border-none"
                   placeholder="username"
                 />
               </div>
               <div className="flex flex-col mb-6">
                 <input
-                  className="rounded-full mb-3 p-2 border-none text-center w-full min-w-max bg-white focus:border-none"
+                  className="rounded-full p-2 border-none text-center w-full min-w-max bg-white focus:border-none"
                   placeholder="password"
                   type="password"
                 />
@@ -34,47 +47,20 @@ const LoginPage = () => {
               <button
                 className="rounded-full w-[100px] h-[100px] bg-[#F9BFDC] text-secondary-70 items-center justify-center flex "
                 type="submit">
-                <LockClosedIcon className="h-9 w-9" aria-hidden="true" />
+                {isSubmit ? (
+                  <div
+                    class="w-12 h-12 rounded-full animate-spin
+                  border-2 border-solid border-primary-50 border-b-transparent"
+                  />
+                ) : (
+                  <LockClosedIcon className="h-9 w-9" aria-hidden="true" />
+                )}
               </button>
             </div>
           </div>
         </form>
       </div>
     </BoxAnimate>
-  );
-  return (
-    <BoxAnimate className="grid h-screen ">
-      <div className="sm:max-w-xl sm:mx-auto">
-        <div className="flex flex-col p-3 h-60 rounded-xl group sm:flex bg-[#F9BFDC] bg-opacity-3 shadow-xl ">
-          <h1 className="text-white mb-3 text-6xl font-oxigen">Hello</h1>
-          <input
-            className="rounded-full mb-3 p-2 border-none text-center w-full min-w-max bg-white focus:border-none"
-            placeholder="username"
-          />
-          <input
-            className="rounded-full mb-3 p-2 border-none text-center w-full min-w-max bg-white focus:border-none"
-            placeholder="password"
-            type="password"
-          />
-        </div>
-      </div>
-    </BoxAnimate>
-  );
-  return (
-    <div className="grid h-screen place-items-center bg-animate">
-      <div className="p-4 flex flex-col h-60 justify-center md:w-[305px] min-h- rounded-xl group sm:flex bg-white bg-opacity-50 shadow-xl">
-        <h1 className="text-white mb-3 text-6xl">Hello</h1>
-        <input
-          className="rounded-full mb-3 p-2 border-none text-center w-full min-w-max bg-white focus:border-none"
-          placeholder="username"
-        />
-        <input
-          className="rounded-full mb-3 p-2 border-none text-center w-full min-w-max bg-white focus:border-none"
-          placeholder="password"
-          type="password"
-        />
-      </div>
-    </div>
   );
 };
 
