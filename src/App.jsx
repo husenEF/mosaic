@@ -77,7 +77,7 @@ import PrivateLayout from './components/Layout/PrivateLayout';
 
 /*pages*/
 const LoginPage = lazy(() => import('./pages/auth/login'));
-const FormPagesMain = lazy(() => import('./pages/Form'));
+const FormIndex = lazy(() => import('./pages/Form'));
 
 const LoadingMessage = () => "I'm loading...";
 
@@ -95,7 +95,7 @@ function App() {
       <Routes>
         <Route element={<PrivateLayout />}>
           <Route index element={<Dashboard />} />
-          <Route path="/form" element={<FormPagesMain />} />
+          <Route path="/form" element={<FormIndex />} />
         </Route>
         {/* <Route exact path="/" element={<Dashboard />} /> */}
         <Route path="/login" element={<LoginPage />} />
