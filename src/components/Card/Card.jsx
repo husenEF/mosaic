@@ -2,11 +2,9 @@ import React from 'react';
 import classNames from '../../utils/classnames';
 import GlassBox from '../box/GlassBox';
 
-// Import utilities
-
 function Card({ title, children, titleClass, className, ...rest }) {
   return (
-    <GlassBox className={classNames('min-h-[300px]', className)} {...rest}>
+    <GlassBox className={classNames(className)} {...rest}>
       {title && (
         <header
           className={classNames(
