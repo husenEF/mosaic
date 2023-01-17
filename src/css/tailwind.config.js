@@ -6,13 +6,16 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          default: '#B66E91',
+          DEFAULT: '#B66E91',
+          20: '#A5A6F6',
           50: '#B66E91',
+          70: '#48062E',
         },
         secondary: {
-          default: '#F9BFDC',
+          DEFAULT: '#F9BFDC',
           50: '#F9BFDC',
           70: '#FCDDEC',
+          80: '#F178B6',
         },
       },
       boxShadow: {
@@ -21,6 +24,7 @@ module.exports = {
         md: '0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
         lg: '0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.01)',
         xl: '0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.01)',
+        template: ' 0px 0px 5px 4px rgba(0, 0, 0, 0.1)',
       },
       outline: {
         blue: '2px solid rgba(0, 112, 244, 0.5)',
