@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
 import './css/style.css';
@@ -72,8 +72,14 @@ import TooltipPage from './pages/component/TooltipPage';
 import AccordionPage from './pages/component/AccordionPage';
 import IconsPage from './pages/component/IconsPage';
 
-import LoginPage from './pages/auth/login';
+// import LoginPage from './pages/auth/login';
 import PrivateLayout from './components/Layout/PrivateLayout';
+
+/*pages*/
+const LoginPage = lazy(() => import('./pages/auth/login'));
+const FormPagesMain = lazy(() => import('./pages/Form'));
+
+const LoadingMessage = () => "I'm loading...";
 
 function App() {
   const location = useLocation();
@@ -85,11 +91,11 @@ function App() {
   }, [location.pathname]); // triggered on route change
 
   return (
-    <>
+    <Suspense fallback={<LoadingMessage />}>
       <Routes>
         <Route element={<PrivateLayout />}>
           <Route index element={<Dashboard />} />
-          <Route path="/form" element={<h1>Form</h1>} />
+          <Route path="/form" element={<FormPagesMain />} />
         </Route>
         {/* <Route exact path="/" element={<Dashboard />} /> */}
         <Route path="/login" element={<LoginPage />} />
@@ -193,7 +199,7 @@ function App() {
         <Route path="/template/login" element={<LoginPage />} />
         <Route path="/template/*" element={<PageNotFound />} />
       </Routes>
-    </>
+    </Suspense>
   );
 }
 

@@ -6,7 +6,7 @@ import GlassBox from '../box/GlassBox';
 
 function Card({ title, children, titleClass, className, ...rest }) {
   return (
-    <GlassBox className={classNames(className)} {...rest}>
+    <GlassBox className={classNames('min-h-[300px]', className)} {...rest}>
       {title && (
         <header
           className={classNames(
