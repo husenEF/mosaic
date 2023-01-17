@@ -89,6 +89,7 @@ function App() {
       <Routes>
         <Route element={<PrivateLayout />}>
           <Route index element={<Dashboard />} />
+          <Route path="/form" element={<h1>Form</h1>} />
         </Route>
         {/* <Route exact path="/" element={<Dashboard />} /> */}
         <Route path="/login" element={<LoginPage />} />

@@ -1,9 +1,26 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { CgFileDocument } from 'react-icons/cg';
+import { BsSpeedometer2 } from 'react-icons/bs';
+
 import classNames from '../utils/classnames';
 
-import SidebarLinkGroup from './SidebarLinkGroup';
 import Speed from '../components/icons/speed';
+
+const menuList = [
+  {
+    to: '/',
+    name: 'Dashboard',
+    icon: BsSpeedometer2,
+    id: 'dashboard',
+  },
+  {
+    to: '/form',
+    name: 'Form',
+    icon: CgFileDocument,
+    id: 'form',
+  },
+];
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const location = useLocation();
@@ -54,25 +71,21 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
   return (
     <div>
-      {/* Sidebar backdrop (mobile only) */}
       <div
         className={`fixed inset-0 bg-slate-900 bg-opacity-30 z-40 lg:hidden lg:z-auto transition-opacity duration-200 ${
           sidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         aria-hidden="true"></div>
 
-      {/* Sidebar */}
       <div
         id="sidebar"
         ref={sidebar}
         className={classNames(
           'flex flex-col absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 lg:w-20 lg:sidebar-expanded:!w-64 2xl:!w-64 shrink-0 p-4 transition-all duration-200 ease-in-out',
           sidebarOpen ? 'translate-x-0' : '-translate-x-64',
-          'border-primary-20 border-r shadow-md shadow-black bg-secondary-default bg-opacity-[45%]',
+          'border-primary-20 border-r shadow-md shadow-black bg-secondary-default lg:bg-opacity-[45%] bg-opacity-100',
         )}>
-        {/* Sidebar header */}
         <div className="flex justify-between mb-10 pr-3 sm:px-2 w-full">
-          {/* Close button */}
           <button
             ref={trigger}
             className="lg:hidden text-slate-500 hover:text-slate-400"
@@ -107,27 +120,34 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
         {/* Links */}
         <div className="space-y-8">
-          {/* Pages group */}
           <ul className="mt-3 -mr-7">
-            {/* Messages */}
-            <li className="p-2 rounded-l-full">
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  classNames(
-                    'flex items-center justify-between p-2 pr-7 text-white font-bold text-xl',
-                    'hover:rounded-l-full hover:bg-primary-70 hover:bg-opacity-70',
-                    [isActive && 'rounded-l-full bg-primary-50 bg-opacity-50'],
-                  )
-                }>
-                <div className="flex items-center">
-                  <Speed className="text-secondary-70" />
-                  <span className="text-sm ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                    Dashboard
-                  </span>
-                </div>
-              </NavLink>
-            </li>
+            {menuList?.map((e) => {
+              const Icon = e.icon;
+              return (
+                <li className="p-2 rounded-l-full" key={e.id}>
+                  <NavLink
+                    to={e.to}
+                    className={({ isActive }) =>
+                      classNames(
+                        'flex items-center justify-between p-2 pr-7 text-white font-bold text-xl',
+                        'hover:rounded-l-full hover:bg-primary-70 hover:bg-opacity-70',
+                        [
+                          isActive &&
+                            'rounded-l-full bg-primary-50 bg-opacity-50',
+                        ],
+                      )
+                    }>
+                    <div className="flex items-center">
+                      <Icon className="text-secondary-70" />
+                      {/* <Speed className="text-secondary-70" /> */}
+                      <span className="text-sm ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                        {e.name}
+                      </span>
+                    </div>
+                  </NavLink>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
