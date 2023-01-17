@@ -8,7 +8,7 @@ function Dashboard() {
       </div>
       <div className="grid grid-cols-12 gap-6">
         <div class="col-span-12 md:col-span-4">
-          <Card title={'Click'} className="text-white min-h-[250px]">
+          <Card title={'Click'} className="text-white">
             <h2 className="text-lg font-semibold text-slate-800 mb-2">
               Acme Advanced
             </h2>
@@ -24,13 +24,13 @@ function Dashboard() {
           </Card>
         </div>
         <div class="col-span-12 md:col-span-4 ">
-          <Card title={'Leads'} className="text-white min-h-[250px]" />
+          <Card title={'Leads'} className="text-white" />
         </div>
         <div class="md:row-span-6 col-span-12 md:col-span-4">
-          <Card title={'Viewer'} className="text-white min-h-[250px] h-full" />
+          <Card title={'Viewer'} className="text-white h-full" />
         </div>
         <div class="col-span-12 md:col-span-8 ">
-          <Card title={'Realtime'} className="text-white min-h-[250px]" />
+          <Card title={'Realtime'} className="text-white" />
         </div>
       </div>
     </div>
