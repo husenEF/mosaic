@@ -38,3 +38,6 @@ export const formatThousands = (value) =>
 export const delay = (ms = 3000) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
+export const getRandomInt = (max = 100) => {
+  return Math.floor(Math.random() * max);
+};
