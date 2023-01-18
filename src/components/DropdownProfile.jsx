@@ -45,7 +45,7 @@ function DropdownProfile({ align }) {
         onClick={() => setDropdownOpen(!dropdownOpen)}
         aria-expanded={dropdownOpen}>
         <span className="truncate mr-3 font-oxigen text-white">Halo Admin</span>
-        <span className="h-14 w-14 shadow-template rounded-full items-center inline-flex justify-center bg-opacity-25">
+        <span className="lg:h-14 lg:w-14 h-10 w-10 shadow-template rounded-full items-center inline-flex justify-center bg-opacity-25">
           <BiUserCircle className="text-white h-6 w-6" />
         </span>
       </button>
@@ -66,7 +66,7 @@ function DropdownProfile({ align }) {
           onFocus={() => setDropdownOpen(true)}
           onBlur={() => setDropdownOpen(false)}>
           <div className="pt-0.5 pb-2 px-3 mb-1 ">
-            <div className="font-medium text-white">Acme Inc.</div>
+            <div className="font-medium text-white">AdminSelvi.</div>
             <div className="text-xs text-white italic">Administrator</div>
           </div>
           <ul>

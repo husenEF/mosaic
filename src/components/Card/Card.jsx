@@ -20,3 +20,13 @@ function Card({ title, children, titleClass, className, ...rest }) {
 }
 
 export default Card;
+
+export const CardBody = ({ children, className }) => {
+  return (
+    <div className={classNames('card-body px-5', className)}>{children}</div>
+  );
+};
+export const CardFooter = ({ children, className }) => {
+  if (!children) return null;
+  return <div class={classNames('card-footer rounded-b-lg overflow-hidden', className)}>{children}</div>;
+};
