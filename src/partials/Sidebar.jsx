@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { CgFileDocument } from 'react-icons/cg';
 import { BsSpeedometer2 } from 'react-icons/bs';
+import { FiSend, FiUsers } from 'react-icons/fi';
+import { IoMdTimer } from 'react-icons/io';
 
 import classNames from '../utils/classnames';
-
-import Speed from '../components/icons/speed';
 
 const menuList = [
   {
@@ -19,6 +19,24 @@ const menuList = [
     name: 'Form',
     icon: CgFileDocument,
     id: 'form',
+  },
+  {
+    to: '/broadcast',
+    name: 'Broadcast',
+    icon: FiSend,
+    id: 'broadcast',
+  },
+  {
+    to: '/users',
+    name: 'Staff',
+    icon: FiUsers,
+    id: 'staff',
+  },
+  {
+    to: '/changelog',
+    name: 'Changelog',
+    icon: IoMdTimer,
+    id: 'changelog',
   },
 ];
 

@@ -74,12 +74,11 @@ import IconsPage from './pages/component/IconsPage';
 
 // import LoginPage from './pages/auth/login';
 import PrivateLayout from './components/Layout/PrivateLayout';
+import PageLoading from './pages/utility/PageLoading';
 
 /*pages*/
 const LoginPage = lazy(() => import('./pages/auth/login'));
 const FormIndex = lazy(() => import('./pages/Form'));
-
-const LoadingMessage = () => "I'm loading...";
 
 function App() {
   const location = useLocation();
@@ -91,15 +90,15 @@ function App() {
   }, [location.pathname]); // triggered on route change
 
   return (
-    <Suspense fallback={<LoadingMessage />}>
+    <Suspense fallback={<PageLoading />}>
       <Routes>
         <Route element={<PrivateLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="/form" element={<FormIndex />} />
+          <Route path="/*" element={<PageNotFound />} />
         </Route>
         {/* <Route exact path="/" element={<Dashboard />} /> */}
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/*" element={<PageNotFound />} />
         {/* original template */}
         <Route path="/template" element={<Dashboard />} />
         <Route path="/template/dashboard/analytics" element={<Analytics />} />

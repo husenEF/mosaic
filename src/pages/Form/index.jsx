@@ -38,7 +38,6 @@ const DummyDataBox = [
 
 const FormPage = () => {
   const RenderDummyBox = ({ title, data, ...rest }) => {
-    console.log({ data });
     return (
       <div class="col-span-12 md:col-span-6 lg:col-span-4" {...rest}>
         <Card title={title} className="px-0" titleClass={'px-5'}>
@@ -48,7 +47,7 @@ const FormPage = () => {
                 href={rest?.link}
                 className="inline-flex text-white font-bold items-center">
                 <MdOutlineLocalFireDepartment />
-                {rest?.link}{' '}
+                {rest?.link}
               </a>
             </p>
           </div>
