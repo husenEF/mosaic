@@ -72,13 +72,15 @@ import TooltipPage from './pages/component/TooltipPage';
 import AccordionPage from './pages/component/AccordionPage';
 import IconsPage from './pages/component/IconsPage';
 
-// import LoginPage from './pages/auth/login';
 import PrivateLayout from './components/Layout/PrivateLayout';
 import PageLoading from './pages/utility/PageLoading';
 
 /*pages*/
 const LoginPage = lazy(() => import('./pages/auth/login'));
 const FormIndex = lazy(() => import('./pages/Form'));
+const FormDashboard = lazy(() => import('./pages/Form/dashboard'));
+const FormView = lazy(() => import('./pages/Form/FormView'));
+const FormEdit = lazy(() => import('./pages/Form/FormEdit'));
 
 function App() {
   const location = useLocation();
@@ -94,7 +96,12 @@ function App() {
       <Routes>
         <Route element={<PrivateLayout />}>
           <Route index element={<Dashboard />} />
-          <Route path="/form" element={<FormIndex />} />
+          {/* <Route path="/form" element={<FormIndex />} /> */}
+          <Route path="/form" element={<FormIndex />}>
+            <Route index element={<FormDashboard />} />
+            <Route path="view/:formId" element={<FormView />} />
+            <Route path="edit/:formId" element={<FormEdit />} />
+          </Route>
           <Route path="/*" element={<PageNotFound />} />
         </Route>
         {/* <Route exact path="/" element={<Dashboard />} /> */}

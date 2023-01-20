@@ -28,5 +28,13 @@ export const CardBody = ({ children, className }) => {
 };
 export const CardFooter = ({ children, className }) => {
   if (!children) return null;
-  return <div class={classNames('card-footer rounded-b-lg overflow-hidden', className)}>{children}</div>;
+  return (
+    <div
+      className={classNames(
+        'card-footer rounded-b-default overflow-hidden',
+        className,
+      )}>
+      {children}
+    </div>
+  );
 };
