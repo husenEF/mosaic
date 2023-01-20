@@ -26,7 +26,7 @@ const LoginPage = () => {
     <BoxAnimate className="min-h-screen flex flex-col items-center justify-center">
       <div className="grid place-items-center max-w-full">
         <form action="#" className="relative w-full" onSubmit={handlingSubmit}>
-          <div className="flex flex-col bg-opacity-3 px-4 py-8 rounded-xl w-full max-w-full mx-0 h-[500px] rect bg-opacity-25 max-h-full">
+          <div className="flex flex-col bg-opacity-3 px-4 py-8 rounded-default w-full max-w-full mx-0 h-[500px] rect bg-opacity-25 max-h-full">
             <div className="basis-1/2 flex justify-end flex-col">
               <h1 className=" text-white mb-3 text-[40px] font-oxigen ">
                 Hello,
@@ -35,13 +35,13 @@ const LoginPage = () => {
             <div className="relative">
               <div className="flex flex-col mb-6">
                 <input
-                  className="rounded-full p-2 border-none text-center w-full min-w-max bg-white focus:border-none"
+                  className="rounded-default p-2 border-none text-center w-full min-w-max bg-white focus:border-none"
                   placeholder="username"
                 />
               </div>
               <div className="flex flex-col mb-6">
                 <input
-                  className="rounded-full p-2 border-none text-center w-full min-w-max bg-white focus:border-none"
+                  className="rounded-default p-2 border-none text-center w-full min-w-max bg-white focus:border-none"
                   placeholder="password"
                   type="password"
                 />

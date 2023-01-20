@@ -66,6 +66,9 @@ module.exports = {
       zIndex: {
         60: '60',
       },
+      borderRadius: {
+        default: '30px',
+      },
     },
   },
   plugins: [
