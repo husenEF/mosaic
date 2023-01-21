@@ -1,0 +1,19 @@
+.flatpickr-wrapper {
+    .flatpickr-calendar {
+        background-color: #f9bfdc;
+        border: 0;
+        color: #fff;
+        .flatpickr-days {
+            .flatpickr-day {
+                background-color: transparent;
+                &.endRange,
+                &.startRange {
+                    background-color: #48062e;
+                }
+                &.inRange {
+                    background-color: #b66e91;
+                }
+            }
+        }
+    }
+}

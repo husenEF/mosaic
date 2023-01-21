@@ -7,14 +7,18 @@ import Card from '../../components/Card/Card';
 import BaseInput from '../../components/input/BaseInput';
 
 import { DummyFormData } from '../../data/dummyForm';
+import Dropdown from '../../components/dropdown';
+import Datepicker from '../../components/Datepicker';
 
 const FormView = () => {
   const params = useParams();
   const [formState, setFormState] = useState(null);
+  const [date, setDate] = useState(null);
   useEffect(() => {
     const data = DummyFormData?.find((data) => data?.id === params?.formId);
     setFormState(data);
   }, [params?.formId]);
+  console.log({ date });
   return (
     <>
       <div className="flex flex-col xs:flex-row xs:justify-between mb-8">
@@ -22,14 +26,17 @@ const FormView = () => {
       </div>
       <Card className="grid grid-cols-12 gap-6 pb-5">
         <div className="col-span-12 md:col-span-3 justify-items-center flex">
-          <h3 className="my-auto text-white font-oxigen text-lg">Laporan Leads</h3>
+          <h3 className="my-auto text-white font-oxigen text-lg">
+            Laporan Leads
+          </h3>
         </div>
         <div className="col-span-12 md:col-span-9 md:justify-end flex">
           <Button className="mr-2 " title={'Export'} />
-          <Button
+          <Datepicker />
+          {/* <Button
             className="mr-2 "
             icon={AiOutlineCalendar}
-            title="Jan 1, 2023 to Jan 10, 2023"></Button>
+            title="Jan 1, 2023 to Jan 10, 2023"></Button> */}
           <BaseInput
             placeholder="Search then enter"
             className="w-auto min-w-0"
