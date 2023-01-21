@@ -7,18 +7,15 @@ import Card from '../../components/Card/Card';
 import BaseInput from '../../components/input/BaseInput';
 
 import { DummyFormData } from '../../data/dummyForm';
-import Dropdown from '../../components/dropdown';
 import Datepicker from '../../components/Datepicker';
 
 const FormView = () => {
   const params = useParams();
   const [formState, setFormState] = useState(null);
-  const [date, setDate] = useState(null);
   useEffect(() => {
     const data = DummyFormData?.find((data) => data?.id === params?.formId);
     setFormState(data);
   }, [params?.formId]);
-  console.log({ date });
   return (
     <>
       <div className="flex flex-col xs:flex-row xs:justify-between mb-8">
