@@ -2,15 +2,23 @@ import React from 'react';
 import classNames from '../../utils/classnames';
 import GlassBox from '../box/GlassBox';
 
-function Card({ title, children, titleClass, className, ...rest }) {
+function Card({
+  title,
+  children,
+  titleClass,
+  className,
+  prevIcon: PrevIcon,
+  ...rest
+}) {
   return (
     <GlassBox className={classNames(className)} {...rest}>
       {title && (
         <header
           className={classNames(
-            'flex justify-between items-start mb-2 text-white font-bold text-lg',
+            'flex items-center mb-2 text-white font-bold text-lg',
             titleClass,
           )}>
+          {PrevIcon && <PrevIcon className="mr-2" />}
           {title}
         </header>
       )}
