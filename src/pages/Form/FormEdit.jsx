@@ -120,7 +120,7 @@ const FormEdit = () => {
               [tabForm === 'settings' ? 'active' : 'hidden'],
               'px-0',
             )}>
-            <CardBody>
+            <CardBody className="mb-3">
               <div className="mb-2">
                 <label className="text-white" htmlFor="formTitle">
                   Title Form
@@ -141,9 +141,10 @@ const FormEdit = () => {
                   langsung di redirect ke halaman response
                 </p>
               </div>
-              <h3>Domain Setting</h3>
+              <h3 className="font-bold text-white mb-2">Domain Setting</h3>
+              <div className="border mb-2 border-white" />
               <div className="">
-                <label>Domain</label>
+                <label className="text-white mb-2">Domain</label>
                 <BaseInput
                   placeholder="http://domain.com/form"
                   className="text-left"
@@ -153,11 +154,11 @@ const FormEdit = () => {
             <CardFooter>
               <div className="grid grid-cols-2 divide-x divide-secondary divide-opacity-40 mt-4">
                 <Button
-                  className="p-4 font-bold text-white text-center !rounded-none"
+                  className="!py-4 font-bold text-white text-center !rounded-none"
                   title={'Simpan'}
                 />
                 <Button
-                  className="p-4 font-bold text-white text-center !rounded-none"
+                  className="!py-4 font-bold text-white text-center !rounded-none"
                   title="Duplicate"
                 />
               </div>
