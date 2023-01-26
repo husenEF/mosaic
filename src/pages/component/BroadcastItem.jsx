@@ -5,7 +5,7 @@ import Card, { CardBody, CardFooter } from '../../components/Card/Card';
 import MouseIcon from '../../components/icons/MouseIcon';
 import UserBox from '../../components/icons/UserBox';
 
-const RenderBroadCastItem = ({ title, data, ...rest }) => {
+const RenderBroadCastItem = ({ title, data, slug, ...rest }) => {
   return (
     <div class="col-span-12 md:col-span-6 lg:col-span-4" {...rest}>
       <Card title={title} className="px-0" titleClass={'px-5'}>
@@ -62,13 +62,13 @@ const RenderBroadCastItem = ({ title, data, ...rest }) => {
         <CardFooter className="">
           <div className="bg-primary bg-opacity-[85%] grid grid-cols-2 divide-x divide-secondary divide-opacity-40">
             <NavLink
-              to={`/form/view/${rest?.id}`}
+              to={`/${slug}/view/${rest?.id}`}
               className="p-4 font-bold text-white text-center">
               Laporan{' '}
             </NavLink>
             <NavLink
               className="p-4 font-bold text-white text-center"
-              to={`/form/edit/${rest?.id}`}>
+              to={`/${slug}/edit/${rest?.id}`}>
               Edit Form
             </NavLink>
           </div>
@@ -78,4 +78,7 @@ const RenderBroadCastItem = ({ title, data, ...rest }) => {
   );
 };
 
+RenderBroadCastItem.defaultProps = {
+  slug: 'form',
+};
 export default RenderBroadCastItem;

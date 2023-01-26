@@ -36,13 +36,13 @@ const CampaignPage = () => {
             <CardFooter className="">
               <div className="bg-primary bg-opacity-[85%] grid grid-cols-2 divide-x divide-secondary divide-opacity-40">
                 <NavLink
-                  to={`/broadcast/view/1`}
+                  to={`/broadcast/list`}
                   className="p-4 font-bold text-white text-center">
-                  Show{' '}
+                  View List
                 </NavLink>
                 <NavLink
                   className="p-4 font-bold text-white text-center justify-center flex items-center"
-                  to={`/broadcast/edit/1`}>
+                  to={`/broadcast/add/list`}>
                   <GoPlus className="mr-2" /> List
                 </NavLink>
               </div>
@@ -61,13 +61,13 @@ const CampaignPage = () => {
             <CardFooter className="">
               <div className="bg-primary bg-opacity-[85%] grid grid-cols-2 divide-x divide-secondary divide-opacity-40">
                 <NavLink
-                  to={`/broadcast/view/1`}
+                  to={`/broadcast`}
                   className="p-4 font-bold text-white text-center">
-                  Show{' '}
+                  Show Campaings
                 </NavLink>
                 <NavLink
                   className="p-4 font-bold text-white text-center justify-center flex items-center"
-                  to={`/broadcast/edit/1`}>
+                  to={`/broadcast/add`}>
                   <GoPlus className="mr-2" /> Campaigs
                 </NavLink>
               </div>
@@ -86,13 +86,13 @@ const CampaignPage = () => {
             <CardFooter className="">
               <div className="bg-primary bg-opacity-[85%] grid grid-cols-2 divide-x divide-secondary divide-opacity-40">
                 <NavLink
-                  to={`/broadcast/view/1`}
+                  to={`/broadcast/devices`}
                   className="p-4 font-bold text-white text-center">
-                  Show{' '}
+                  View Devices
                 </NavLink>
                 <NavLink
                   className="p-4 font-bold text-white text-center justify-center flex items-center"
-                  to={`/broadcast/edit/1`}>
+                  to={`/broadcast/add/devices`}>
                   <GoPlus className="mr-2" /> Devices
                 </NavLink>
               </div>
@@ -107,6 +107,7 @@ const CampaignPage = () => {
               data={e.data}
               title={e.title}
               className="mb-4"
+              slug="broadcast"
               {...e}
             />
           ))}
