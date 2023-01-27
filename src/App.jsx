@@ -85,6 +85,7 @@ const BroadCastIndex = lazy(() => import('./pages/Broadcast/index'));
 const BroadCastCampaign = lazy(() => import('./pages/Broadcast/campaign'));
 const DeviceList = lazy(() => import('./pages/Broadcast/devices'));
 const DeviceForm = lazy(() => import('./pages/Broadcast/devices/add'));
+const BroadcastList = lazy(() => import('./pages/Broadcast/List'));
 
 function App() {
   const location = useLocation();
@@ -110,6 +111,7 @@ function App() {
             <Route index element={<BroadCastCampaign />} />
             <Route path="devices" element={<DeviceList />} />
             <Route path="devices/:id" element={<DeviceForm />} />
+            <Route path="list" element={<BroadcastList />} />
           </Route>
           <Route path="/*" element={<PageNotFound />} />
         </Route>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import NotFoundImage from '../../images/404-illustration.svg';
 import classNames from '../../utils/classnames';
 
-function PageNotFound() {
+function PageNotFound({ message }) {
   return (
     <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto ">
       <div className="max-w-2xl m-auto mt-16">
@@ -17,7 +17,8 @@ function PageNotFound() {
             />
           </div>
           <div className="mb-6 text-white font-bold">
-            Hmm...this page doesn’t exist. Try searching for something else!
+            {message ??
+              'Hmm...this page doesn’t exist. Try searching for something else!'}
           </div>
           <Link
             to="/"
@@ -33,5 +34,9 @@ function PageNotFound() {
     </div>
   );
 }
+
+PageNotFound.defaultProps = {
+  message: '',
+};
 
 export default PageNotFound;
