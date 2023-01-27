@@ -22,7 +22,7 @@ const DevicesList = () => {
         />
       </div>
       <div className="grid grid-cols-12 gap-6 pb-5 justify-items-center">
-        <div className="col-span-12 col-start-1 xl:col-start-2 xl:col-span-8 w-full bg-secondary-50 rounded-default p-4 grid grid-cols-6">
+        <div className="col-span-12 col-start-1 xl:col-start-3 xl:col-span-8 w-full bg-secondary-50 rounded-default p-4 grid grid-cols-6">
           <div className="col-span-2 flex items-center">
             <h3 className="text-white font-bold text-lg">Devices</h3>
           </div>
@@ -47,7 +47,7 @@ const DevicesList = () => {
                   <tr key={e.id}>
                     <td class="px-4 py-2">
                       <Link
-                        className="text-primary-600  border-primary-200 border-b border-dotted font-medium"
+                        className="text-primary-70 hover:text-primary-50  border-primary-200 border-b border-dotted font-medium"
                         to={`/broadcast/devices/${e.id}`}>
                         {e.deviceName}
                       </Link>
