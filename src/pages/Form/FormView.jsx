@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { AiOutlineCalendar } from 'react-icons/ai';
 
 import Button from '../../components/button/button';
 import Card from '../../components/Card/Card';
@@ -30,10 +29,6 @@ const FormView = () => {
         <div className="col-span-12 md:col-span-9 md:justify-end flex">
           <Button className="mr-2 " title={'Export'} />
           <Datepicker />
-          {/* <Button
-            className="mr-2 "
-            icon={AiOutlineCalendar}
-            title="Jan 1, 2023 to Jan 10, 2023"></Button> */}
           <BaseInput
             placeholder="Search then enter"
             className="w-auto min-w-0"

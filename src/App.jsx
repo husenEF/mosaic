@@ -81,6 +81,10 @@ const FormIndex = lazy(() => import('./pages/Form'));
 const FormDashboard = lazy(() => import('./pages/Form/dashboard'));
 const FormView = lazy(() => import('./pages/Form/FormView'));
 const FormEdit = lazy(() => import('./pages/Form/FormEdit'));
+const BroadCastIndex = lazy(() => import('./pages/Broadcast/index'));
+const BroadCastCampaign = lazy(() => import('./pages/Broadcast/campaign'));
+const DeviceList = lazy(() => import('./pages/Broadcast/devices'));
+const DeviceForm = lazy(() => import('./pages/Broadcast/devices/add'));
 
 function App() {
   const location = useLocation();
@@ -101,6 +105,11 @@ function App() {
             <Route index element={<FormDashboard />} />
             <Route path="view/:formId" element={<FormView />} />
             <Route path="edit/:formId" element={<FormEdit />} />
+          </Route>
+          <Route path="/broadcast" element={<BroadCastIndex />}>
+            <Route index element={<BroadCastCampaign />} />
+            <Route path="devices" element={<DeviceList />} />
+            <Route path="devices/:id" element={<DeviceForm />} />
           </Route>
           <Route path="/*" element={<PageNotFound />} />
         </Route>
