@@ -4,8 +4,10 @@ import { IoMdPerson } from 'react-icons/io';
 
 import Button from '../../../components/button/button';
 import RenderBroadCastItem from '../../component/BroadcastItem';
+import { Link, useNavigate } from 'react-router-dom';
 
 const BroadcastList = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="flex flex-col xs:flex-row xs:justify-between mb-8">
@@ -15,7 +17,7 @@ const BroadcastList = () => {
         <Button
           icon={GoPlus}
           title="Create List"
-          onClick={() => console.log('add list')}
+          onClick={() => navigate('/broadcast/list/add')}
         />
       </div>
       <div className="grid grid-cols-12 gap-6 pb-5">
@@ -29,16 +31,16 @@ const BroadcastList = () => {
               footer={() => {
                 return (
                   <div className="bg-primary bg-opacity-[85%] grid grid-cols-2 divide-x divide-secondary divide-opacity-40">
-                    <button
-                      to={`/broadcast/list/kontak/1`}
+                    <Link
+                      to={`/broadcast/list/1`}
                       className="p-4 font-bold text-white text-center flex items-center justify-center">
                       <BsChat className="mr-2" /> Daftar Kontak
-                    </button>
-                    <button
+                    </Link>
+                    <Link
                       className="p-4 font-bold text-primary-70 text-center flex items-center justify-center"
                       to={`/broadcast/list/kontak/hapus/1`}>
                       <BsTrash className="mr-2" /> Hapus
-                    </button>
+                    </Link>
                   </div>
                 );
               }}>

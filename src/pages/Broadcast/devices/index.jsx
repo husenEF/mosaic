@@ -1,7 +1,7 @@
 import { GoPlus } from 'react-icons/go';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { formatDate } from '../../../utils/dateTimeFormat';
+import { DEFAULT_FORMAT, formatDate } from '../../../utils/dateTimeFormat';
 
 import Button from '../../../components/button/button';
 import Datepicker from '../../../components/Datepicker';
@@ -55,7 +55,9 @@ const DevicesList = () => {
                     <td class="px-4 py-2">
                       {e?.status ? 'connected' : 'disconnected'}
                     </td>
-                    <td class="px-4 py-2">{formatDate(e?.updatedAt,'dd/MM/yyyy HH:ss')}</td>
+                    <td class="px-4 py-2">
+                      {formatDate(e?.updatedAt, DEFAULT_FORMAT)}
+                    </td>
                   </tr>
                 ))}
               </tbody>
