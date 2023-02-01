@@ -42,7 +42,7 @@ const CampaignPage = () => {
                 </NavLink>
                 <NavLink
                   className="p-4 font-bold text-white text-center justify-center flex items-center"
-                  to={`/broadcast/add/list`}>
+                  to={`/broadcast/list/add`}>
                   <GoPlus className="mr-2" /> List
                 </NavLink>
               </div>
@@ -92,7 +92,7 @@ const CampaignPage = () => {
                 </NavLink>
                 <NavLink
                   className="p-4 font-bold text-white text-center justify-center flex items-center"
-                  to={`/broadcast/add/devices`}>
+                  to={`/broadcast/devices/add`}>
                   <GoPlus className="mr-2" /> Devices
                 </NavLink>
               </div>
