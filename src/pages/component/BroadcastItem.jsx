@@ -7,7 +7,7 @@ import UserBox from '../../components/icons/UserBox';
 
 const RenderBroadCastItem = ({ title, data, slug, children, ...rest }) => {
   return (
-    <div class="col-span-12 md:col-span-6 lg:col-span-4" {...rest}>
+    <div className="col-span-12 md:col-span-6 lg:col-span-4" {...rest}>
       <Card title={title} className="px-0" titleClass={'px-5'}>
         {rest?.link ? (
           <div className="flex-1 px-5  ">
@@ -25,7 +25,7 @@ const RenderBroadCastItem = ({ title, data, slug, children, ...rest }) => {
           {children ? (
             children
           ) : (
-            <table class="table-fixed text-left text-white font-bold  w-full">
+            <table className="table-fixed text-left text-white font-bold  w-full">
               <thead>
                 <tr>
                   <th>Hari ini</th>

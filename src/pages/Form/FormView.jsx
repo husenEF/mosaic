@@ -35,7 +35,7 @@ const FormView = () => {
           />
         </div>
         <div className="col-span-12">
-          <table class="table-auto border border-collapse w-full">
+          <table className="table-auto border border-collapse w-full">
             <thead>
               <tr>
                 <th className="border text-white font-oxigen">Name</th>

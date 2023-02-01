@@ -34,28 +34,28 @@ const DevicesList = () => {
             />
           </div>
           <div className="col-span-12 mt-3">
-            <table class="w-full divide-y divide-gray-200 overflow-hidden rounded-default text-left text-sm table">
-              <thead class="vtl-thead">
-                <tr class="bg-gray-50 text-gray-500   ">
-                  <th class="py-2 px-4 font-medium">Name </th>
-                  <th class="py-2 px-4 font-medium">Status </th>
-                  <th class="py-2 px-4 font-medium">Updated at </th>
+            <table className="w-full divide-y divide-gray-200 overflow-hidden rounded-default text-left text-sm table">
+              <thead className="vtl-thead">
+                <tr className="bg-gray-50 text-gray-500   ">
+                  <th className="py-2 px-4 font-medium">Name </th>
+                  <th className="py-2 px-4 font-medium">Status </th>
+                  <th className="py-2 px-4 font-medium">Updated at </th>
                 </tr>
               </thead>
-              <tbody class="bg-gray-50">
+              <tbody className="bg-gray-50">
                 {DummyDevicesData.map((e) => (
                   <tr key={e.id}>
-                    <td class="px-4 py-2">
+                    <td className="px-4 py-2">
                       <Link
                         className="text-primary-70 hover:text-primary-50  border-primary-200 border-b border-dotted font-medium"
                         to={`/broadcast/devices/${e.id}`}>
                         {e.deviceName}
                       </Link>
                     </td>
-                    <td class="px-4 py-2">
+                    <td className="px-4 py-2">
                       {e?.status ? 'connected' : 'disconnected'}
                     </td>
-                    <td class="px-4 py-2">
+                    <td className="px-4 py-2">
                       {formatDate(e?.updatedAt, DEFAULT_FORMAT)}
                     </td>
                   </tr>

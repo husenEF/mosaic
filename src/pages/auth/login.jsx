@@ -55,7 +55,7 @@ const LoginPage = () => {
                 type="submit">
                 {isSubmit ? (
                   <div
-                    class="w-12 h-12 rounded-full animate-spin
+                    className="w-12 h-12 rounded-full animate-spin
                   border-2 border-solid border-primary-50 border-b-transparent"
                   />
                 ) : (

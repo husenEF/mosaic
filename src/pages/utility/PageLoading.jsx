@@ -8,7 +8,7 @@ function PageLoading() {
           <div className="text-center px-4">
             <div className="inline-flex mb-8">
               <div
-                class="w-12 h-12 rounded-full animate-spin
+                className="w-12 h-12 rounded-full animate-spin
                   border-2 border-solid border-primary-50 border-b-transparent"
               />
             </div>

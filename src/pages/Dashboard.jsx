@@ -7,7 +7,7 @@ function Dashboard() {
         <h2 className="text-2xl font-bold text-white font-oxigen">Dashboard</h2>
       </div>
       <div className="grid grid-cols-12 gap-6">
-        <div class="col-span-12 md:col-span-4">
+        <div className="col-span-12 md:col-span-4">
           <Card title={'Click'} className="text-white">
             <h2 className="text-lg font-semibold text-slate-800 mb-2">
               Acme Advanced
@@ -23,13 +23,13 @@ function Dashboard() {
             </div>
           </Card>
         </div>
-        <div class="col-span-12 md:col-span-4 ">
+        <div className="col-span-12 md:col-span-4 ">
           <Card title={'Leads'} className="text-white" />
         </div>
-        <div class="md:row-span-6 col-span-12 md:col-span-4">
+        <div className="md:row-span-6 col-span-12 md:col-span-4">
           <Card title={'Viewer'} className="text-white h-full" />
         </div>
-        <div class="col-span-12 md:col-span-8 ">
+        <div className="col-span-12 md:col-span-8 ">
           <Card title={'Realtime'} className="text-white" />
         </div>
       </div>
