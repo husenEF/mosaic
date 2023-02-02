@@ -27,7 +27,7 @@ const menuList = [
     id: 'broadcast',
   },
   {
-    to: '/users',
+    to: '/staff',
     name: 'Staff',
     icon: FiUsers,
     id: 'staff',
