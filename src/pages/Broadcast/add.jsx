@@ -8,6 +8,7 @@ import BaseInput from '../../components/input/BaseInput';
 import { DummyContactList } from '../../data/dummyContact';
 import Datepicker from '../../components/Datepicker';
 import Button from '../../components/button/button';
+import DateTimePicker from '../../components/DateTimePicker';
 
 const CreateCampaign = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,6 +40,11 @@ const CreateCampaign = () => {
     setSelectedContact(selectedContactsUpdated);
     setIsOpen(true);
   }
+
+  const handleChangeDate = (...rest) => {
+    console.log('handleChange', { rest });
+  };
+  
   return (
     <>
       <div className="flex flex-col xs:flex-row xs:justify-between mb-8">
@@ -178,24 +184,26 @@ const CreateCampaign = () => {
               </label>
               <textarea
                 id="text"
-                className="border p-1 rounded w-full border-primary-50 focus:border-none">
-                Hai [name], live Facebook jam 9 pagi ya
-              </textarea>
+                className="border p-1 rounded w-full border-primary-50 focus:border-none"
+                defaultValue={
+                  'Hai [name], live Facebook jam 9 pagi ya'
+                }></textarea>
             </div>
             <div className="block mb-2">
               <label className="mb-2 text-white block" htmlFor="schedule">
                 Schedule
               </label>
-              <Flatpickr
+              <DateTimePicker handleChange={handleChangeDate} />
+              {/* <Flatpickr
+                className="rounded w-full"
                 options={{
                   enableTime: true,
                   dateFormat: 'Y-m-d H:i',
                 }}
-              />
+              /> */}
             </div>
           </CardBody>
           <CardFooter className="justify-end flex py-3 px-3 items-center">
-            {/* <button className=''>Save </button> */}
             <Button title="Delete" className="bg-red-500 mr-2" />
             <Button title="Save as draft" className="bg-yellow-500 mr-2" />
             <Button title="Schedule campaing" />
