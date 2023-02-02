@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { GoPlus } from 'react-icons/go';
 import { CiViewList } from 'react-icons/ci';
 import { RiSendPlaneLine } from 'react-icons/ri';
@@ -11,6 +11,7 @@ import RenderBroadCastItem from '../component/BroadcastItem';
 import { DummyFormData } from '../../data/dummyForm';
 
 const CampaignPage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="flex flex-col xs:flex-row xs:justify-between mb-8">
@@ -20,11 +21,11 @@ const CampaignPage = () => {
         <Button
           icon={GoPlus}
           title="Create Campaign"
-          onClick={() => console.log('add broadcast')}
+          onClick={() => navigate('/broadcast/add')}
         />
       </div>
       <div className="grid grid-cols-12 gap-6 pb-5">
-        <div class="col-span-12 md:col-span-6 lg:col-span-4">
+        <div className="col-span-12 md:col-span-6 lg:col-span-4">
           <Card
             title="List"
             className="px-0"
@@ -49,7 +50,7 @@ const CampaignPage = () => {
             </CardFooter>
           </Card>
         </div>
-        <div class="col-span-12 md:col-span-6 lg:col-span-4">
+        <div className="col-span-12 md:col-span-6 lg:col-span-4">
           <Card
             title="Campaigns"
             className="px-0"
@@ -74,7 +75,7 @@ const CampaignPage = () => {
             </CardFooter>
           </Card>
         </div>
-        <div class="col-span-12 md:col-span-6 lg:col-span-4">
+        <div className="col-span-12 md:col-span-6 lg:col-span-4">
           <Card
             title="Devices"
             className="px-0"
@@ -99,7 +100,7 @@ const CampaignPage = () => {
             </CardFooter>
           </Card>
         </div>
-        <div class="col-span-12 mt-4">
+        <div className="col-span-12 mt-4">
           <h2 className="text-white font-bold text-xl mb-4">Campaigns</h2>
           {DummyFormData?.map((e) => (
             <RenderBroadCastItem

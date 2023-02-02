@@ -65,24 +65,24 @@ const AddNewList = () => {
                   className="w-auto min-w-0"
                 />
               </div>
-              <table class="w-full divide-y divide-gray-200 overflow-hidden rounded-default text-left text-sm table col-span-12">
-                <thead class="vtl-thead">
-                  <tr class="bg-gray-50 text-gray-500   ">
-                    <th class="py-2 px-4 font-medium">Name </th>
-                    <th class="py-2 px-4 font-medium">Phone </th>
-                    <th class="py-2 px-4 font-medium">Status </th>
-                    <th class="py-2 px-4 font-medium">Updated at </th>
+              <table className="w-full divide-y divide-gray-200 overflow-hidden rounded-default text-left text-sm table col-span-12">
+                <thead className="vtl-thead">
+                  <tr className="bg-gray-50 text-gray-500   ">
+                    <th className="py-2 px-4 font-medium">Name </th>
+                    <th className="py-2 px-4 font-medium">Phone </th>
+                    <th className="py-2 px-4 font-medium">Status </th>
+                    <th className="py-2 px-4 font-medium">Updated at </th>
                   </tr>
                 </thead>
-                <tbody class="bg-gray-50">
+                <tbody className="bg-gray-50">
                   {DummyContact.map((e) => (
                     <tr key={e.id}>
-                      <td class="px-4 py-2">{e.fullName}</td>
-                      <td class="px-4 py-2">{e.phone}</td>
-                      <td class="px-4 py-2">
+                      <td className="px-4 py-2">{e.fullName}</td>
+                      <td className="px-4 py-2">{e.phone}</td>
+                      <td className="px-4 py-2">
                         {e?.status ? 'subscribed' : 'un-subscribed'}
                       </td>
-                      <td class="px-4 py-2">
+                      <td className="px-4 py-2">
                         {formatDate(e?.updateAt, DEFAULT_FORMAT)}
                       </td>
                     </tr>

@@ -83,6 +83,7 @@ const FormView = lazy(() => import('./pages/Form/FormView'));
 const FormEdit = lazy(() => import('./pages/Form/FormEdit'));
 const BroadCastIndex = lazy(() => import('./pages/Broadcast/index'));
 const BroadCastCampaign = lazy(() => import('./pages/Broadcast/campaign'));
+const BroadcastCampaignAdd = lazy(() => import('./pages/Broadcast/add'));
 const DeviceList = lazy(() => import('./pages/Broadcast/devices'));
 const DeviceForm = lazy(() => import('./pages/Broadcast/devices/add'));
 const BroadcastList = lazy(() => import('./pages/Broadcast/List'));
@@ -110,6 +111,7 @@ function App() {
           </Route>
           <Route path="/broadcast" element={<BroadCastIndex />}>
             <Route index element={<BroadCastCampaign />} />
+            <Route path="add" element={<BroadcastCampaignAdd />} />
             <Route path="devices" element={<DeviceList />} />
             <Route path="devices/:id" element={<DeviceForm />} />
             <Route path="list" element={<BroadcastList />} />

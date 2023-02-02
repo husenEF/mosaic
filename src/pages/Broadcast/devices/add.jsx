@@ -52,7 +52,7 @@ const DeviceAdd = () => {
                   'dd/MM  /yyyy hh:mm',
                 )}
               </p>
-              <div class="w-6/12 sm:w-4/12 px-4">
+              <div className="w-6/12 sm:w-4/12 px-4">
                 <QRCode
                   value={deviceData?.id ?? 'null'}
                   className="shadow rounded max-w-full h-auto align-middle border-none"
