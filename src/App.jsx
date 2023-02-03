@@ -90,6 +90,7 @@ const BroadcastList = lazy(() => import('./pages/Broadcast/List'));
 const AddList = lazy(() => import('./pages/Broadcast/List/add'));
 const StaffList = lazy(() => import('./pages/staff'));
 const StaffAdd = lazy(() => import('./pages/staff/add'));
+const ChangeLogPage = lazy(() => import('./pages/changelog'));
 
 function App() {
   const location = useLocation();
@@ -122,6 +123,7 @@ function App() {
           </Route>
           <Route path="/staff" element={<StaffList />} />
           <Route path="/staff/:staffId" element={<StaffAdd />} />
+          <Route path="/changelog" element={<ChangeLogPage />} />
 
           <Route path="/*" element={<PageNotFound />} />
         </Route>
