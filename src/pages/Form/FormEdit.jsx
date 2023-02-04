@@ -4,6 +4,8 @@ import { AiOutlineForm, AiOutlineBarChart } from 'react-icons/ai';
 import { FiExternalLink } from 'react-icons/fi';
 import { BiBookmark, BiPlus } from 'react-icons/bi';
 import { VscSettings } from 'react-icons/vsc';
+import { BsArrowDown, BsTrash } from 'react-icons/bs';
+import { MdOutlineContentCopy } from 'react-icons/md';
 
 import Button from '../../components/button/button';
 import BaseInput from '../../components/input/BaseInput';
@@ -85,27 +87,64 @@ const FormEdit = () => {
         <div className="col-span-12 md:col-span-8 lg:col-span-9 ">
           <Card
             title={'Text'}
-            className={classNames('w-9/12 bg-blue-100 mx-auto py-5', [
+            className={classNames('w-full md:w-9/12 bg-blue-100 mx-auto py-5', [
               tabForm === 'form' ? 'active' : 'hidden',
             ])}
             prevIcon={BiBookmark}>
-            <div className="border-dashed border-2 rounded-default p-4 border-secondary-80 w-full h-80 border-1 flex justify-center items-center">
+            {/* <div className="border-dashed border-2 rounded-default p-4 border-secondary-80 w-full h-80 border-1 flex justify-center items-center">
               <Button title={'Add Box'} icon={BiPlus} />
-            </div>
-            {/* <div className="grid grid-cols-4 gap-3">
-              <div className="col-span-2 sm:col-span-4 lg:col-span-2">
-                <label htmlFor="label" className='text-white mb-2'>Label</label>
-                <BaseInput id="label" />
-              </div>
-              <div className="col-span-2 sm:col-span-4 lg:col-span-2">
-                <label htmlFor="label" className='text-white mb-2'>Label</label>
-                <BaseInput id="label" />
-              </div>
             </div> */}
+            <div className="grid grid-cols-4 gap-3">
+              <div className="col-span-2 sm:col-span-4 lg:col-span-2">
+                <label htmlFor="label" className="text-white mb-2">
+                  Label
+                </label>
+                <BaseInput id="label" />
+              </div>
+
+              <div className="col-span-2 sm:col-span-4 lg:col-span-2">
+                <label htmlFor="placeholder" className="text-white mb-2">
+                  Placeholder
+                </label>
+                <BaseInput id="placeholder" />
+              </div>
+              <div className="col-span-12">
+                <Button className="!p-2.5 inline-flex mr-2.5">
+                  <BsArrowDown />
+                </Button>
+                <Button className="!p-2.5 inline-flex mr-2.5">
+                  <MdOutlineContentCopy />
+                </Button>
+                <Button className="!p-2.5 inline-flex mr-2.5">
+                  <BsTrash />
+                </Button>
+                <div className="relative inline-flex items-start">
+                  <div className="flex h-5 items-center">
+                    <input
+                      id="required"
+                      aria-describedby="required-description"
+                      name="required"
+                      type="checkbox"
+                      className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 form-checkbox"
+                    />
+                  </div>
+                  <div className="ml-3 text-sm">
+                    <label
+                      htmlFor="required"
+                      className="font-medium text-gray-700">
+                      Required
+                    </label>
+                    <span id="required-description" className="text-gray-500">
+                      <span className="sr-only">Required </span>(Harus diisi)
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </Card>
           <Card
             title={'Response'}
-            className={classNames('w-9/12 bg-blue-100 mx-auto', [
+            className={classNames('w-full md:w-9/12 bg-blue-100 mx-auto', [
               tabForm === 'response' ? 'active' : 'hidden',
             ])}>
             <div className="border-dashed border-2 rounded-default p-4 border-secondary-80 w-full h-80 border-1 flex justify-center items-center">
@@ -116,7 +155,7 @@ const FormEdit = () => {
             title={'Form Meta'}
             titleClass={'px-5'}
             className={classNames(
-              'w-9/12 bg-blue-100 mx-auto',
+              'w-full md:w-9/12 bg-blue-100 mx-auto',
               [tabForm === 'settings' ? 'active' : 'hidden'],
               'px-0',
             )}>
