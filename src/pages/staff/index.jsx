@@ -30,7 +30,7 @@ const StaffPage = () => {
               <BaseInput placeholder="Search" className="!text-left max-w-xs" />
             </div>
             <div className="overflow-x-auto">
-              <table className="w-full divide-y text-white overflow-hidden rounded-default text-left text-sm table table-auto">
+              <table className="w-full divide-y bg-gray-50 overflow-hidden rounded-default text-left text-sm table table-auto">
                 <thead className="vtl-thead">
                   <tr className="">
                     <th className="py-2 px-4 font-medium">Name </th>
