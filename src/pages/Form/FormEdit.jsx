@@ -88,14 +88,12 @@ const FormEdit = () => {
         <div className="col-span-12 md:col-span-8 lg:col-span-9 ">
           <Card
             title={'Text'}
-            className={classNames('w-full md:w-9/12 bg-blue-100 mx-auto py-5', [
+            className={classNames('w-full md:w-9/12 bg-blue-100 mx-auto px-0', [
               tabForm === 'form' ? 'active' : 'hidden',
             ])}
+            titleClass="mx-3 mt-3"
             prevIcon={BiBookmark}>
-            {/* <div className="border-dashed border-2 rounded-default p-4 border-secondary-80 w-full h-80 border-1 flex justify-center items-center">
-              <Button title={'Add Box'} icon={BiPlus} />
-            </div> */}
-            <div className="grid grid-cols-4 gap-3">
+            <CardBody className="grid grid-cols-4 gap-3 py-3">
               <div className="col-span-2 sm:col-span-4 lg:col-span-2">
                 <label htmlFor="label" className="text-white mb-2">
                   Label
@@ -143,12 +141,14 @@ const FormEdit = () => {
               </div>
               <div className="col-span-12">
                 <label htmlFor="coment">Komentar</label>
-                {/* <BaseInput placeholder="Enter Text here" id="coment" /> */}
-                <div className="bg-white w-full"  >
-                  <WyswygComponent  className="rounded-full"/>
+                <div className="w-full bg-white">
+                  <WyswygComponent className="rounded-full" />
                 </div>
               </div>
-            </div>
+            </CardBody>
+            <CardFooter className="p-3">
+              <Button title={'Save'} className="w-full" />
+            </CardFooter>
           </Card>
           <Card
             title={'Response'}
@@ -178,7 +178,7 @@ const FormEdit = () => {
                 <input
                   id="formSession"
                   type="checkbox"
-                  class="form-checkbox rounded text-secondary-80 mr-2"
+                  className="form-checkbox rounded text-secondary-80 mr-2"
                 />
                 <label className="text-white" htmlFor="formSession">
                   Aktifkan Session
