@@ -1,6 +1,8 @@
 import Card from '../components/Card/Card';
+import useToast from '../context/toastContext';
 
 function Dashboard() {
+  const { setToast } = useToast();
   return (
     <div className="p-8 w-full max-w-full mx-auto">
       <div className="sm:flex sm:justify-between sm:items-center mb-8">
@@ -24,7 +26,38 @@ function Dashboard() {
           </Card>
         </div>
         <div className="col-span-12 md:col-span-4 ">
-          <Card title={'Leads'} className="text-white" />
+          <Card title={'Leads'} className="text-white">
+            <h4>Toast</h4>
+            <span className="isolate inline-flex rounded-md shadow-sm">
+              <button
+                onClick={() => setToast('Success Toast', 'success')}
+                type="button"
+                className="relative inline-flex items-center rounded-l-md px-4 py-2 text-sm font-medium bg-green-500 hover:bg-green-600">
+                Success
+              </button>
+              <button
+                type="button"
+                onClick={() => setToast('Error Toast', 'error')}
+                className="relative -ml-px inline-flex items-center px-4 py-2 text-sm font-medium bg-red-500 hover:bg-red-600">
+                Error
+              </button>
+              <button
+                type="button"
+                onClick={() => setToast('Default Toast', '')}
+                className="relative -ml-px inline-flex items-center px-4 py-2 text-sm font-medium bg-blue-500 hover:bg-blue-600">
+                Default
+              </button>
+              <button
+                type="button"
+                onClick={() => setToast('Warning Toast', 'warning')}
+                className="relative -ml-px inline-flex items-center rounded-r-md px-4 py-2 text-sm font-medium  bg-yellow-500 hover:bg-yellow-600">
+                Warning
+              </button>
+            </span>
+            {/* <button onClick={() => setToast('Success message')} className>
+              Open Toast
+            </button> */}
+          </Card>
         </div>
         <div className="md:row-span-6 col-span-12 md:col-span-4">
           <Card title={'Viewer'} className="text-white h-full" />
