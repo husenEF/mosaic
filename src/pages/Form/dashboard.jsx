@@ -1,4 +1,5 @@
 import { GoPlus } from 'react-icons/go';
+import { useNavigate } from 'react-router-dom';
 
 import Button from '../../components/button/button';
 import RenderBroadCastItem from '../component/BroadcastItem';
@@ -6,6 +7,7 @@ import RenderBroadCastItem from '../component/BroadcastItem';
 import { DummyFormData } from '../../data/dummyForm';
 
 const FormDashboard = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="flex flex-col xs:flex-row xs:justify-between mb-8">
@@ -13,7 +15,7 @@ const FormDashboard = () => {
         <Button
           icon={GoPlus}
           title="Form"
-          onClick={() => console.log('add form')}
+          onClick={() => navigate('/form/new')}
         />
       </div>
       <div className="grid grid-cols-12 gap-6">

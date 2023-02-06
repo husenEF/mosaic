@@ -1,0 +1,6 @@
+.ql-editor {
+  /* height: 250px; */
+  /* max-height: 250px; */
+  min-height: 200px;
+  overflow: auto;
+}
