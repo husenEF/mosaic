@@ -35,33 +35,27 @@ const FormView = () => {
           />
         </div>
         <div className="col-span-12">
-          <table className="table-auto border border-collapse w-full">
-            <thead>
-              <tr>
-                <th className="border text-white font-oxigen">Name</th>
-                <th className="border text-white font-oxigen">Comment</th>
-                <th className="border text-white font-oxigen">Phone</th>
-                <th className="border text-white font-oxigen">Created At</th>
+          <table className="w-full divide-y divide-gray-200 overflow-hidden rounded-default text-left text-sm table">
+            <thead className="vtl-thead">
+              <tr className="bg-gray-50 text-gray-500  border-b ">
+                <th className=" py-2 px-4 font-oxigen">Name</th>
+                <th className=" py-2 px-4 font-oxigen">Comment</th>
+                <th className=" py-2 px-4 font-oxigen">Phone</th>
+                <th className=" py-2 px-4 font-oxigen">Created At</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="bg-gray-50">
               {formState?.comments?.map((e) => {
                 return (
                   <tr key={e?.id}>
-                    <td className="border text-white font-oxigen">
-                      {e?.fullName}
-                    </td>
-                    <td className="border text-white font-oxigen">
+                    <td className=" py-2 px-4 font-oxigen">{e?.fullName}</td>
+                    <td className=" py-2 px-4 font-oxigen">
                       <p className="text-ellipsis overflow-hidden">
                         {e?.comment}
                       </p>
                     </td>
-                    <td className="border text-white font-oxigen">
-                      {e?.phone}
-                    </td>
-                    <td className="border text-white font-oxigen">
-                      {e?.createdAt}
-                    </td>
+                    <td className=" py-2 px-4 font-oxigen">{e?.phone}</td>
+                    <td className=" py-2 px-4 font-oxigen">{e?.createdAt}</td>
                   </tr>
                 );
               })}
