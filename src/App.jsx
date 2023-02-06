@@ -109,6 +109,7 @@ function App() {
           {/* <Route path="/form" element={<FormIndex />} /> */}
           <Route path="/form" element={<FormIndex />}>
             <Route index element={<FormDashboard />} />
+            <Route path="new" element={<FormEdit />} />
             <Route path="view/:formId" element={<FormView />} />
             <Route path="edit/:formId" element={<FormEdit />} />
           </Route>

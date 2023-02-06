@@ -145,19 +145,81 @@ const FormEdit = () => {
                   <WyswygComponent className="rounded-full" />
                 </div>
               </div>
+              <div className="col-span-12 p-3">
+                <Button title={'Save'} className="w-full py-4" />
+              </div>
             </CardBody>
-            <CardFooter className="p-3">
-              <Button title={'Save'} className="w-full" />
+            <CardFooter className="p-3 bg-secondary-70 bg-opacity-25">
+              <div className="block mb-2">
+                <label className="block text-lg text-white font-bold">
+                  Standar Input
+                </label>
+                {['Name', 'Phone', 'Text', 'TextArea'].map((e) => (
+                  <button
+                    className="mr-2 bg-gray-400 text-white rounded py-1 px-3"
+                    key={e}>
+                    {e}
+                  </button>
+                ))}
+              </div>
+              <div className="block mb-2">
+                <label className="block text-lg text-white font-bold">
+                  Widget
+                </label>
+                {['Whatsapp Rotator', 'Countdown'].map((e) => (
+                  <button
+                    className="mr-2 bg-gray-400 text-white rounded py-1 px-3"
+                    key={e}>
+                    {e}
+                  </button>
+                ))}
+              </div>
             </CardFooter>
           </Card>
           <Card
             title={'Response'}
-            className={classNames('w-full md:w-9/12 bg-blue-100 mx-auto', [
-              tabForm === 'response' ? 'active' : 'hidden',
-            ])}>
-            <div className="border-dashed border-2 rounded-default p-4 border-secondary-80 w-full h-80 border-1 flex justify-center items-center">
+            className={classNames(
+              'w-full md:w-9/12 bg-blue-100 mx-auto px-0 mt-2',
+              [tabForm === 'response' ? 'active' : 'hidden'],
+            )}
+            titleClass="mx-3">
+            <CardBody className="mb-5">
+              <div className="bg-white min-h-full">
+                <WyswygComponent
+                  value="Thank you for your submission."
+                  className="min-h-full"
+                />
+              </div>
+            </CardBody>
+            {/* <div className="border-dashed border-2 rounded-default p-4 border-secondary-80 w-full h-80 border-1 flex justify-center items-center">
               <Button title={'Add Box'} icon={BiPlus} />
-            </div>
+            </div> */}
+            <CardFooter className="p-3 bg-secondary-70 bg-opacity-25">
+              <div className="block mb-2">
+                <label className="block text-lg text-white font-bold">
+                  Standar Response
+                </label>
+                {['Text', 'Countdown'].map((e) => (
+                  <button
+                    className="mr-2 bg-gray-400 text-white rounded py-1 px-3"
+                    key={e}>
+                    {e}
+                  </button>
+                ))}
+              </div>
+              <div className="block mb-2">
+                <label className="block text-lg text-white font-bold">
+                  Viral Response
+                </label>
+                {['Whatsapp Rotator', 'share'].map((e) => (
+                  <button
+                    className="mr-2 bg-gray-400 text-white rounded py-1 px-3"
+                    key={e}>
+                    {e}
+                  </button>
+                ))}
+              </div>
+            </CardFooter>
           </Card>
           <Card
             title={'Form Meta'}
@@ -192,10 +254,22 @@ const FormEdit = () => {
               <div className="border mb-2 border-white" />
               <div className="">
                 <label className="text-white mb-2">Domain</label>
-                <BaseInput
+                <div className="mt-1 flex rounded-default shadow-sm overflow-hidden">
+                  <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-gray-500 sm:text-sm">
+                    http://domain.com
+                  </span>
+                  <input
+                    type="text"
+                    name="company-website"
+                    id="company-website"
+                    className="block w-full min-w-0 flex-1 rounded-none rounded-r-default border-gray-300 px-3 py-2 sm:text-sm"
+                    placeholder="www.example.com"
+                  />
+                </div>
+                {/* <BaseInput
                   placeholder="http://domain.com/form"
-                  className="text-left"
-                />
+                  className="!text-left"
+                /> */}
               </div>
             </CardBody>
             <CardFooter>
