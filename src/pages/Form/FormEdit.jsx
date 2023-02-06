@@ -9,6 +9,7 @@ import { MdOutlineContentCopy } from 'react-icons/md';
 
 import Button from '../../components/button/button';
 import BaseInput from '../../components/input/BaseInput';
+import WyswygComponent from '../../components/input/Wyswyg';
 
 import { DummyFormData } from '../../data/dummyForm';
 import classNames from '../../utils/classnames';
@@ -138,6 +139,13 @@ const FormEdit = () => {
                       <span className="sr-only">Required </span>(Harus diisi)
                     </span>
                   </div>
+                </div>
+              </div>
+              <div className="col-span-12">
+                <label htmlFor="coment">Komentar</label>
+                {/* <BaseInput placeholder="Enter Text here" id="coment" /> */}
+                <div className="bg-white w-full"  >
+                  <WyswygComponent  className="rounded-full"/>
                 </div>
               </div>
             </div>
