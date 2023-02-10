@@ -8,13 +8,13 @@ import UserBox from '../../components/icons/UserBox';
 const RenderBroadCastItem = ({ title, data, slug, children, ...rest }) => {
   return (
     <div className="col-span-12 md:col-span-6 lg:col-span-4" {...rest}>
-      <Card title={title} className="px-0" titleClass={'px-5'}>
+      <Card title={title} className="px-0 min-h-[250px]" titleClass={'px-5 text-xl mb-0'}>
         {rest?.link ? (
-          <div className="flex-1 px-5  ">
+          <div className="px-5  mb-4">
             <p className="text-ellipsis overflow-hidden">
               <a
                 href={rest?.link}
-                className="inline-flex text-white font-bold items-center">
+                className="inline-flex text-white font-bold items-center text-[11px]">
                 <MdOutlineLocalFireDepartment />
                 {rest?.link}
               </a>

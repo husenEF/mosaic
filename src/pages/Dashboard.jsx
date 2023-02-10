@@ -28,29 +28,29 @@ function Dashboard() {
         <div className="col-span-12 md:col-span-4 ">
           <Card title={'Leads'} className="text-white">
             <h4>Toast</h4>
-            <span className="isolate inline-flex rounded-md shadow-sm">
+            <span className="isolate inline-flex rounded-md shadow-sm flex-col md:flex-row">
               <button
                 onClick={() => setToast('Success Toast', 'success')}
                 type="button"
-                className="relative inline-flex items-center rounded-l-md px-4 py-2 text-sm font-medium bg-green-500 hover:bg-green-600">
+                className="relative inline-flex items-center rounded md:rounded-l-md px-4 py-2 text-sm font-medium bg-green-500 hover:bg-green-600">
                 Success
               </button>
               <button
                 type="button"
                 onClick={() => setToast('Error Toast', 'error')}
-                className="relative -ml-px inline-flex items-center px-4 py-2 text-sm font-medium bg-red-500 hover:bg-red-600">
+                className="relative -ml-px inline-flex items-center rounded md:rounded-none px-4 py-2 text-sm font-medium bg-red-500 hover:bg-red-600">
                 Error
               </button>
               <button
                 type="button"
                 onClick={() => setToast('Default Toast', '')}
-                className="relative -ml-px inline-flex items-center px-4 py-2 text-sm font-medium bg-blue-500 hover:bg-blue-600">
+                className="relative -ml-px inline-flex items-center px-4 rounded md:rounded-none py-2 text-sm font-medium bg-blue-500 hover:bg-blue-600">
                 Default
               </button>
               <button
                 type="button"
                 onClick={() => setToast('Warning Toast', 'warning')}
-                className="relative -ml-px inline-flex items-center rounded-r-md px-4 py-2 text-sm font-medium  bg-yellow-500 hover:bg-yellow-600">
+                className="relative -ml-px inline-flex items-center rounded md:rounded-r-md px-4 py-2 text-sm font-medium  bg-yellow-500 hover:bg-yellow-600">
                 Warning
               </button>
             </span>
