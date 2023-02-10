@@ -13,7 +13,7 @@ const DateTimePicker = ({ handleChange }) => {
       <Flatpicker
         className={classNames(
           'rounded-default bg-transparent',
-          'text-white font-oxigen ',
+          'text-white font-oxigens ',
           'bg-gradient-to-b from-transparent to-secondary',
           'border-0 pr-9 mr-2',
           'hover:border-0 font-medium focus:border-0 w-full',

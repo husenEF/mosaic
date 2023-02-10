@@ -11,7 +11,7 @@ const BroadcastList = () => {
   return (
     <>
       <div className="flex flex-col xs:flex-row xs:justify-between mb-8">
-        <h2 className="text-2xl font-bold text-white font-oxigen">
+        <h2 className="text-2xl font-bold text-white font-oxigens">
           Broadcast List
         </h2>
         <Button
@@ -45,7 +45,7 @@ const BroadcastList = () => {
                 );
               }}>
               <div className="flex flex-col">
-                <h3 className="text-white font-oxigen font-bold mb-4">
+                <h3 className="text-white font-oxigens font-bold mb-4">
                   Kontak
                 </h3>
                 <p className="text-white flex items-center">

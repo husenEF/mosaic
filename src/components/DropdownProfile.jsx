@@ -44,7 +44,7 @@ function DropdownProfile({ align }) {
         aria-haspopup="true"
         onClick={() => setDropdownOpen(!dropdownOpen)}
         aria-expanded={dropdownOpen}>
-        <span className="truncate mr-3 font-oxigen text-white">Halo Admin</span>
+        <span className="truncate mr-3 font-oxigens text-white">Halo Admin</span>
         <span className="lg:h-14 lg:w-14 h-10 w-10 shadow-template rounded-full items-center inline-flex justify-center bg-opacity-25">
           <BiUserCircle className="text-white h-6 w-6" />
         </span>

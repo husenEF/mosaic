@@ -15,7 +15,7 @@ const CampaignPage = () => {
   return (
     <>
       <div className="flex flex-col xs:flex-row xs:justify-between mb-8">
-        <h2 className="text-2xl font-bold text-white font-oxigen">
+        <h2 className="text-2xl font-bold text-white font-oxigens">
           Broadcast campaign
         </h2>
         <Button
@@ -32,7 +32,7 @@ const CampaignPage = () => {
             titleClass={'px-5 text-2xl text-oxigen font-bold'}
             prevIcon={CiViewList}>
             <CardBody className={'flex-auto'}>
-              <h3 className="text-4xl text-white font-oxigen font-bold">1</h3>
+              <h3 className="text-4xl text-white font-oxigens font-bold">1</h3>
             </CardBody>
             <CardFooter className="">
               <div className="bg-primary bg-opacity-[85%] grid grid-cols-2 divide-x divide-secondary divide-opacity-40">
@@ -57,7 +57,7 @@ const CampaignPage = () => {
             titleClass={'px-5 text-2xl text-oxigen font-bold'}
             prevIcon={RiSendPlaneLine}>
             <CardBody className={'flex-auto'}>
-              <h3 className="text-4xl text-white font-oxigen font-bold">1</h3>
+              <h3 className="text-4xl text-white font-oxigens font-bold">1</h3>
             </CardBody>
             <CardFooter className="">
               <div className="bg-primary bg-opacity-[85%] grid grid-cols-2 divide-x divide-secondary divide-opacity-40">
@@ -82,7 +82,7 @@ const CampaignPage = () => {
             titleClass={'px-5 text-2xl text-oxigen font-bold'}
             prevIcon={HiDeviceMobile}>
             <CardBody className={'flex-auto'}>
-              <h3 className="text-4xl text-white font-oxigen font-bold">1</h3>
+              <h3 className="text-4xl text-white font-oxigens font-bold">1</h3>
             </CardBody>
             <CardFooter className="">
               <div className="bg-primary bg-opacity-[85%] grid grid-cols-2 divide-x divide-secondary divide-opacity-40">

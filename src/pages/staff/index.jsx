@@ -16,7 +16,7 @@ const StaffPage = () => {
   return (
     <div className="p-8 w-full max-w-full mx-auto">
       <div className="flex flex-col xs:flex-row xs:justify-between mb-8">
-        <h2 className="text-2xl font-bold text-white font-oxigen">Staff</h2>
+        <h2 className="text-2xl font-bold text-white font-oxigens">Staff</h2>
         <Button
           icon={GoPlus}
           title="New Staff"

@@ -46,7 +46,7 @@ function Dropdown({ align, title, children, btnClass, className, ...rest }) {
         aria-haspopup="true"
         onClick={() => setDropdownOpen(!dropdownOpen)}
         aria-expanded={dropdownOpen}>
-        <span className="truncate mr-3 font-oxigen text-white">
+        <span className="truncate mr-3 font-oxigens text-white">
           {title || 'Dropdown'}
         </span>
       </button>

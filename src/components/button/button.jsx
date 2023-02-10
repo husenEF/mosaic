@@ -5,7 +5,7 @@ const Button = ({ icon: Icon, title, className, children, ...rest }) => {
     <button
       className={classNames(
         'flex justify-center items-center rounded-default py-1 px-2',
-        'text-white font-oxigen ',
+        'text-white font-oxigens ',
         'bg-gradient-to-b from-transparent to-secondary',
         className,
       )}

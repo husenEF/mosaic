@@ -30,7 +30,7 @@ const FormEdit = () => {
     <>
       <div className="flex flex-col xs:flex-row xs:justify-between mb-8">
         <div>
-          <h2 className="text-2xl font-bold text-white font-oxigen">Form</h2>
+          <h2 className="text-2xl font-bold text-white font-oxigens">Form</h2>
           <a
             className="text-white inline-flex items-center"
             href={formState?.link}>

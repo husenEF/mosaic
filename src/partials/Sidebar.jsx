@@ -123,7 +123,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           <NavLink
             end
             to="/"
-            className="block font-bold text-white mx-auto font-oxigen text-center">
+            className="block font-bold text-white mx-auto font-oxigens text-center">
             <div className="lg:hidden">
               <h1 className="text-2xl">AdminSelvi</h1>
               <span className="block text-right leading-none text-sm">

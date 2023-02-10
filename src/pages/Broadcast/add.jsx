@@ -48,7 +48,7 @@ const CreateCampaign = () => {
   return (
     <>
       <div className="flex flex-col xs:flex-row xs:justify-between mb-8">
-        <h2 className="text-2xl font-bold text-white font-oxigen">
+        <h2 className="text-2xl font-bold text-white font-oxigens">
           New Campaign
         </h2>
       </div>

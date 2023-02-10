@@ -24,7 +24,7 @@ function PageNotFound({ message }) {
             to="/"
             className={classNames(
               'rounded-md py-2 px-4',
-              'text-white font-oxigen ',
+              'text-white font-oxigens ',
               'bg-gradient-to-b from-transparent to-secondary',
             )}>
             Back To Dashboard

@@ -28,7 +28,7 @@ const LoginPage = () => {
         <form action="#" className="relative w-full" onSubmit={handlingSubmit}>
           <div className="flex flex-col bg-opacity-3 px-4 py-8 rounded-default w-full max-w-full mx-0 h-[500px] rect bg-opacity-25 max-h-full">
             <div className="basis-1/2 flex justify-end flex-col">
-              <h1 className=" text-white mb-3 text-[40px] font-oxigen ">
+              <h1 className=" text-white mb-3 text-[40px] font-oxigens ">
                 Hello,
               </h1>
             </div>

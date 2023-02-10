@@ -13,7 +13,7 @@ const AddNewList = () => {
   return (
     <>
       <div className="flex flex-col xs:flex-row xs:justify-between mb-8">
-        <h2 className="text-2xl font-bold text-white font-oxigen">
+        <h2 className="text-2xl font-bold text-white font-oxigens">
           Broadcast List
         </h2>
       </div>
@@ -53,7 +53,7 @@ const AddNewList = () => {
           <Card className="px-0">
             <CardBody className="grid grid-cols-12 gap-6 pb-5">
               <div className="col-span-12 md:col-span-3 justify-items-center flex">
-                <h3 className="my-auto text-white font-oxigen text-lg">
+                <h3 className="my-auto text-white font-oxigens text-lg">
                   Contacts
                 </h3>
               </div>

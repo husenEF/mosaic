@@ -18,11 +18,11 @@ const FormView = () => {
   return (
     <>
       <div className="flex flex-col xs:flex-row xs:justify-between mb-8">
-        <h2 className="text-2xl font-bold text-white font-oxigen">Leads</h2>
+        <h2 className="text-2xl font-bold text-white font-oxigens">Leads</h2>
       </div>
       <Card className="grid grid-cols-12 gap-6 pb-5">
         <div className="col-span-12 md:col-span-3 justify-items-center flex">
-          <h3 className="my-auto text-white font-oxigen text-lg">
+          <h3 className="my-auto text-white font-oxigens text-lg">
             Laporan Leads
           </h3>
         </div>
@@ -38,24 +38,24 @@ const FormView = () => {
           <table className="w-full divide-y divide-gray-200 overflow-hidden rounded-10 text-left text-sm table">
             <thead className="vtl-thead">
               <tr className="bg-gray-50 text-gray-500  border-b ">
-                <th className=" py-2 px-4 font-oxigen">Name</th>
-                <th className=" py-2 px-4 font-oxigen">Comment</th>
-                <th className=" py-2 px-4 font-oxigen">Phone</th>
-                <th className=" py-2 px-4 font-oxigen">Created At</th>
+                <th className=" py-2 px-4 font-oxigens">Name</th>
+                <th className=" py-2 px-4 font-oxigens">Comment</th>
+                <th className=" py-2 px-4 font-oxigens">Phone</th>
+                <th className=" py-2 px-4 font-oxigens">Created At</th>
               </tr>
             </thead>
             <tbody className="bg-gray-50">
               {formState?.comments?.map((e) => {
                 return (
                   <tr key={e?.id}>
-                    <td className=" py-2 px-4 font-oxigen">{e?.fullName}</td>
-                    <td className=" py-2 px-4 font-oxigen">
+                    <td className=" py-2 px-4 font-oxigens">{e?.fullName}</td>
+                    <td className=" py-2 px-4 font-oxigens">
                       <p className="text-ellipsis overflow-hidden">
                         {e?.comment}
                       </p>
                     </td>
-                    <td className=" py-2 px-4 font-oxigen">{e?.phone}</td>
-                    <td className=" py-2 px-4 font-oxigen">{e?.createdAt}</td>
+                    <td className=" py-2 px-4 font-oxigens">{e?.phone}</td>
+                    <td className=" py-2 px-4 font-oxigens">{e?.createdAt}</td>
                   </tr>
                 );
               })}
