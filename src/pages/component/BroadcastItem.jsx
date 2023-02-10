@@ -8,7 +8,7 @@ import UserBox from '../../components/icons/UserBox';
 const RenderBroadCastItem = ({ title, data, slug, children, ...rest }) => {
   return (
     <div className="col-span-12 md:col-span-6 lg:col-span-4" {...rest}>
-      <Card title={title} className="px-0 min-h-[250px]" titleClass={'px-5 text-xl mb-0'}>
+      <Card title={title} className="px-0 min-h-[250px]" titleClass={'px-5 text-xl mb-0 font-oxigen'}>
         {rest?.link ? (
           <div className="px-5  mb-4">
             <p className="text-ellipsis overflow-hidden">
