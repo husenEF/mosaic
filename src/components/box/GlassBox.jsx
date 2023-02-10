@@ -6,7 +6,7 @@ const GlassBox = ({ children, className, ...rest }) => {
       className={classNames(
         className,
         'min-h-[300px]',
-        'rounded-default bg-secondary-50 bg-opacity-25',
+        'rounded-10 bg-secondary-50 bg-opacity-25',
         'flex flex-col col-span-full sm:col-span-6 xl:col-span-4',
         'px-5 pt-5',
       )}

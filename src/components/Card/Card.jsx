@@ -39,7 +39,7 @@ export const CardFooter = ({ children, className }) => {
   return (
     <div
       className={classNames(
-        'card-footer rounded-b-default overflow-hidden',
+        'card-footer rounded-b-10 overflow-hidden',
         className,
       )}>
       {children}

@@ -68,6 +68,7 @@ module.exports = {
       },
       borderRadius: {
         default: '30px',
+        10: '10px',
       },
       keyframes: {
         'fade-in-down': {

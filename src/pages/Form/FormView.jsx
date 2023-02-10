@@ -35,7 +35,7 @@ const FormView = () => {
           />
         </div>
         <div className="col-span-12">
-          <table className="w-full divide-y divide-gray-200 overflow-hidden rounded-default text-left text-sm table">
+          <table className="w-full divide-y divide-gray-200 overflow-hidden rounded-10 text-left text-sm table">
             <thead className="vtl-thead">
               <tr className="bg-gray-50 text-gray-500  border-b ">
                 <th className=" py-2 px-4 font-oxigen">Name</th>

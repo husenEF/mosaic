@@ -51,7 +51,7 @@ const LoginPage = () => {
           <div className="absolute w-full -bottom-[54px]">
             <div className="flex justify-center">
               <button
-                className="rounded-full w-[100px] h-[100px] bg-[#F9BFDC] text-secondary-70 items-center justify-center flex "
+                className="rounded-full w-[100px] h-[100px] bg-[#F9BFDC] bg-opacity-50 text-secondary-70 items-center justify-center flex "
                 type="submit">
                 {isSubmit ? (
                   <div

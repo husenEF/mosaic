@@ -65,7 +65,7 @@ const AddNewList = () => {
                   className="w-auto min-w-0"
                 />
               </div>
-              <table className="w-full divide-y divide-gray-200 overflow-hidden rounded-default text-left text-sm table col-span-12">
+              <table className="w-full divide-y divide-gray-200 overflow-hidden rounded-10 text-left text-sm table col-span-12">
                 <thead className="vtl-thead">
                   <tr className="bg-gray-50 text-gray-500   ">
                     <th className="py-2 px-4 font-medium">Name </th>

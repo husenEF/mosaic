@@ -22,7 +22,7 @@ const DevicesList = () => {
         />
       </div>
       <div className="grid grid-cols-12 gap-6 pb-5 justify-items-center">
-        <div className="col-span-12 col-start-1 xl:col-start-3 xl:col-span-8 w-full bg-secondary-50 rounded-default p-4 grid grid-cols-6">
+        <div className="col-span-12 col-start-1 xl:col-start-3 xl:col-span-8 w-full bg-secondary-50 rounded-10 p-4 grid grid-cols-6">
           <div className="col-span-2 flex items-center">
             <h3 className="text-white font-bold text-lg">Devices</h3>
           </div>
@@ -34,7 +34,7 @@ const DevicesList = () => {
             />
           </div>
           <div className="col-span-12 mt-3">
-            <table className="w-full divide-y divide-gray-200 overflow-hidden rounded-default text-left text-sm table">
+            <table className="w-full divide-y divide-gray-200 overflow-hidden rounded-10 text-left text-sm table">
               <thead className="vtl-thead">
                 <tr className="bg-gray-50 text-gray-500   ">
                   <th className="py-2 px-4 font-medium">Name </th>
