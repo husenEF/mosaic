@@ -1,18 +1,22 @@
-import { useState } from 'react';
-import { Listbox, Transition } from '@headlessui/react';
-import Flatpickr from 'react-flatpickr';
+import { useEffect, useState } from "react";
+import { Listbox, Transition } from "@headlessui/react";
+import { useParams } from "react-router-dom";
 
-import Card, { CardBody, CardFooter } from '../../components/Card/Card';
-import BaseInput from '../../components/input/BaseInput';
+import Card, { CardBody, CardFooter } from "../../components/Card/Card";
+import BaseInput from "../../components/input/BaseInput";
 
-import { DummyContactList } from '../../data/dummyContact';
-import Datepicker from '../../components/Datepicker';
-import Button from '../../components/button/button';
-import DateTimePicker from '../../components/DateTimePicker';
+import { DummyContactList } from "../../data/dummyContact";
+import Button from "../../components/button/button";
+import DateTimePicker from "../../components/DateTimePicker";
+
+import { DummyFormData } from "../../data/dummyForm";
 
 const CreateCampaign = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedContacts, setSelectedContact] = useState([]);
+  const [data, setData] = useState(null);
+  const params = useParams();
+
   function isSelected(value) {
     return selectedContacts.find((el) => el.name === value) ? true : false;
   }
@@ -42,9 +46,18 @@ const CreateCampaign = () => {
   }
 
   const handleChangeDate = (...rest) => {
-    console.log('handleChange', { rest });
+    console.log("handleChange", { rest });
   };
-  
+
+  useEffect(() => {
+    if ("id" in params) {
+      const current = DummyFormData?.find((e) => e.id === params?.id);
+      if (current) setData(current);
+    } else {
+      setData(null);
+    }
+  }, [params]);
+
   return (
     <>
       <div className="flex flex-col xs:flex-row xs:justify-between mb-8">
@@ -62,6 +75,7 @@ const CreateCampaign = () => {
               <BaseInput
                 className="!text-left w-full"
                 placeholder="New Campaign"
+                value={data?.title}
               />
             </div>
             <div className="block">
@@ -70,7 +84,7 @@ const CreateCampaign = () => {
                 className="space-y-1"
                 value={selectedContacts}
                 onChange={(value) => {
-                  console.log('a', value);
+                  console.log("a", value);
                   handleSelect(value);
                 }}
                 open={isOpen}>
@@ -87,7 +101,7 @@ const CreateCampaign = () => {
                           open={isOpen}>
                           <span className="block text-primary-50">
                             {selectedContacts.length < 1
-                              ? 'Select persons'
+                              ? "Select persons"
                               : `Selected persons (${selectedContacts.length})`}
                           </span>
                           <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
@@ -127,14 +141,14 @@ const CreateCampaign = () => {
                                   <div
                                     className={`${
                                       active
-                                        ? 'text-white bg-blue-600'
-                                        : 'text-gray-900'
+                                        ? "text-white bg-blue-600"
+                                        : "text-gray-900"
                                     } cursor-default select-none relative py-2 pl-8 pr-4`}>
                                     <span
                                       className={`${
                                         selected
-                                          ? 'font-semibold'
-                                          : 'font-normal'
+                                          ? "font-semibold"
+                                          : "font-normal"
                                       } block truncate`}>
                                       {contact?.name}- ({contact?.count})
                                     </span>
@@ -142,8 +156,8 @@ const CreateCampaign = () => {
                                       <span
                                         className={`${
                                           active
-                                            ? 'text-white'
-                                            : 'text-primary-70'
+                                            ? "text-white"
+                                            : "text-primary-70"
                                         } absolute inset-y-0 left-0 flex items-center pl-1.5`}>
                                         <svg
                                           className="h-5 w-5"
@@ -168,8 +182,8 @@ const CreateCampaign = () => {
                       <div className="pt-1 text-sm">
                         {selectedContacts.length > 0 && (
                           <>
-                            Selected Contact:{' '}
-                            {selectedContacts.map((e) => e.name).join(', ')}
+                            Selected Contact:{" "}
+                            {selectedContacts.map((e) => e.name).join(", ")}
                           </>
                         )}
                       </div>
@@ -186,7 +200,7 @@ const CreateCampaign = () => {
                 id="text"
                 className="border p-1 rounded w-full border-primary-50 focus:border-none"
                 defaultValue={
-                  'Hai [name], live Facebook jam 9 pagi ya'
+                  "Hai [name], live Facebook jam 9 pagi ya"
                 }></textarea>
             </div>
             <div className="block mb-2">

@@ -118,6 +118,7 @@ function App() {
             <Route path="/broadcast" element={<BroadCastIndex />}>
               <Route index element={<BroadCastCampaign />} />
               <Route path="add" element={<BroadcastCampaignAdd />} />
+              <Route path="add/:id" element={<BroadcastCampaignAdd />} />
               <Route path="devices" element={<DeviceList />} />
               <Route path="devices/:id" element={<DeviceForm />} />
               <Route path="list" element={<BroadcastList />} />
