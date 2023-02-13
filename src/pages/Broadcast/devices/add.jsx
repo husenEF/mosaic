@@ -27,7 +27,7 @@ const DeviceAdd = () => {
         </h2>
       </div>
       <div className="grid grid-cols-12 gap-6 pb-5">
-        <div className="col-span-8 col-start-3 ">
+        <div className="col-span-12 md:col-span-8 md:col-start-3 ">
           <Card prevIcon={AiFillEdit} className="px-0">
             <CardBody>
               <div className="text-white">

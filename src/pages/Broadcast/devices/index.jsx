@@ -1,13 +1,13 @@
-import { GoPlus } from 'react-icons/go';
-import { Link, useNavigate } from 'react-router-dom';
+import { GoPlus } from "react-icons/go";
+import { Link, useNavigate } from "react-router-dom";
 
-import { DEFAULT_FORMAT, formatDate } from '../../../utils/dateTimeFormat';
+import { DEFAULT_FORMAT, formatDate } from "../../../utils/dateTimeFormat";
 
-import Button from '../../../components/button/button';
-import Datepicker from '../../../components/Datepicker';
-import BaseInput from '../../../components/input/BaseInput';
+import Button from "../../../components/button/button";
+import Datepicker from "../../../components/Datepicker";
+import BaseInput from "../../../components/input/BaseInput";
 
-import { DummyDevicesData } from '../../../data/dummyDevices';
+import { DummyDevicesData } from "../../../data/dummyDevices";
 
 const DevicesList = () => {
   const navigation = useNavigate();
@@ -18,7 +18,7 @@ const DevicesList = () => {
         <Button
           icon={GoPlus}
           title="Create Devices"
-          onClick={() => navigation('/broadcast/devices/add')}
+          onClick={() => navigation("/broadcast/devices/add")}
         />
       </div>
       <div className="grid grid-cols-12 gap-6 pb-5 justify-items-center">
@@ -26,7 +26,7 @@ const DevicesList = () => {
           <div className="col-span-2 flex items-center">
             <h3 className="text-white font-bold text-lg">Devices</h3>
           </div>
-          <div className="col-span-4 flex">
+          <div className="col-span-12 md:col-span-4 md:justify-end flex-col md:flex-row flex">
             <Datepicker />
             <BaseInput
               placeholder="Search then enter"
@@ -34,34 +34,36 @@ const DevicesList = () => {
             />
           </div>
           <div className="col-span-12 mt-3">
-            <table className="w-full divide-y divide-gray-200 overflow-hidden rounded-10 text-left text-sm table">
-              <thead className="vtl-thead">
-                <tr className="bg-gray-50 text-gray-500   ">
-                  <th className="py-2 px-4 font-medium">Name </th>
-                  <th className="py-2 px-4 font-medium">Status </th>
-                  <th className="py-2 px-4 font-medium">Updated at </th>
-                </tr>
-              </thead>
-              <tbody className="bg-gray-50">
-                {DummyDevicesData.map((e) => (
-                  <tr key={e.id}>
-                    <td className="px-4 py-2">
-                      <Link
-                        className="text-primary-70 hover:text-primary-50  border-primary-200 border-b border-dotted font-medium"
-                        to={`/broadcast/devices/${e.id}`}>
-                        {e.deviceName}
-                      </Link>
-                    </td>
-                    <td className="px-4 py-2">
-                      {e?.status ? 'connected' : 'disconnected'}
-                    </td>
-                    <td className="px-4 py-2">
-                      {formatDate(e?.updatedAt, DEFAULT_FORMAT)}
-                    </td>
+            <div className="overflow-x-auto rounded-10">
+              <table className="w-full divide-y divide-gray-200 overflow-hidden text-left text-sm table">
+                <thead className="vtl-thead">
+                  <tr className="bg-gray-50 text-gray-500   ">
+                    <th className="py-2 px-4 font-medium">Name </th>
+                    <th className="py-2 px-4 font-medium">Status </th>
+                    <th className="py-2 px-4 font-medium">Updated at </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="bg-gray-50">
+                  {DummyDevicesData.map((e) => (
+                    <tr key={e.id}>
+                      <td className="px-4 py-2">
+                        <Link
+                          className="text-primary-70 hover:text-primary-50  border-primary-200 border-b border-dotted font-medium"
+                          to={`/broadcast/devices/${e.id}`}>
+                          {e.deviceName}
+                        </Link>
+                      </td>
+                      <td className="px-4 py-2">
+                        {e?.status ? "connected" : "disconnected"}
+                      </td>
+                      <td className="px-4 py-2">
+                        {formatDate(e?.updatedAt, DEFAULT_FORMAT)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

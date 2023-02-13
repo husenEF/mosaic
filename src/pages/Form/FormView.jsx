@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-import Button from '../../components/button/button';
-import Card from '../../components/Card/Card';
-import BaseInput from '../../components/input/BaseInput';
+import Button from "../../components/button/button";
+import Card from "../../components/Card/Card";
+import BaseInput from "../../components/input/BaseInput";
 
-import { DummyFormData } from '../../data/dummyForm';
-import Datepicker from '../../components/Datepicker';
+import { DummyFormData } from "../../data/dummyForm";
+import Datepicker from "../../components/Datepicker";
 
 const FormView = () => {
   const params = useParams();
@@ -26,8 +26,8 @@ const FormView = () => {
             Laporan Leads
           </h3>
         </div>
-        <div className="col-span-12 md:col-span-9 md:justify-end flex">
-          <Button className="mr-2 " title={'Export'} />
+        <div className="col-span-12 md:col-span-9 md:justify-end flex flex-col md:flex-row gap-2 md:gap-0">
+          <Button className="mr-2 " title={"Export"} />
           <Datepicker />
           <BaseInput
             placeholder="Search then enter"
@@ -35,32 +35,36 @@ const FormView = () => {
           />
         </div>
         <div className="col-span-12">
-          <table className="w-full divide-y divide-gray-200 overflow-hidden rounded-10 text-left text-sm table">
-            <thead className="vtl-thead">
-              <tr className="bg-gray-50 text-gray-500  border-b ">
-                <th className=" py-2 px-4 font-oxigens">Name</th>
-                <th className=" py-2 px-4 font-oxigens">Comment</th>
-                <th className=" py-2 px-4 font-oxigens">Phone</th>
-                <th className=" py-2 px-4 font-oxigens">Created At</th>
-              </tr>
-            </thead>
-            <tbody className="bg-gray-50">
-              {formState?.comments?.map((e) => {
-                return (
-                  <tr key={e?.id}>
-                    <td className=" py-2 px-4 font-oxigens">{e?.fullName}</td>
-                    <td className=" py-2 px-4 font-oxigens">
-                      <p className="text-ellipsis overflow-hidden">
-                        {e?.comment}
-                      </p>
-                    </td>
-                    <td className=" py-2 px-4 font-oxigens">{e?.phone}</td>
-                    <td className=" py-2 px-4 font-oxigens">{e?.createdAt}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+          <div className="overflow-x-auto rounded-10">
+            <table className="w-full divide-y divide-gray-200 overflow-hidden text-left text-sm table">
+              <thead className="vtl-thead">
+                <tr className="bg-gray-50 text-gray-500  border-b ">
+                  <th className=" py-2 px-4 font-oxigens">Name</th>
+                  <th className=" py-2 px-4 font-oxigens">Comment</th>
+                  <th className=" py-2 px-4 font-oxigens">Phone</th>
+                  <th className=" py-2 px-4 font-oxigens">Created At</th>
+                </tr>
+              </thead>
+              <tbody className="bg-gray-50">
+                {formState?.comments?.map((e) => {
+                  return (
+                    <tr key={e?.id}>
+                      <td className=" py-2 px-4 font-oxigens">{e?.fullName}</td>
+                      <td className=" py-2 px-4 font-oxigens">
+                        <p className="text-ellipsis overflow-hidden">
+                          {e?.comment}
+                        </p>
+                      </td>
+                      <td className=" py-2 px-4 font-oxigens">{e?.phone}</td>
+                      <td className=" py-2 px-4 font-oxigens">
+                        {e?.createdAt}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
         <div className="col-span-12">
           <nav
@@ -68,8 +72,8 @@ const FormView = () => {
             aria-label="Pagination">
             <div className="hidden sm:block">
               <p className="text-sm text-white">
-                Showing <span className="font-medium">1</span> to{' '}
-                <span className="font-medium">10</span> of{' '}
+                Showing <span className="font-medium">1</span> to{" "}
+                <span className="font-medium">10</span> of{" "}
                 <span className="font-medium">20</span> results
               </p>
             </div>

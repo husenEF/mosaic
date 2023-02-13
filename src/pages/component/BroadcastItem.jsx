@@ -1,14 +1,17 @@
-import { MdOutlineLocalFireDepartment } from 'react-icons/md';
-import { NavLink } from 'react-router-dom';
+import { MdOutlineLocalFireDepartment } from "react-icons/md";
+import { NavLink } from "react-router-dom";
 
-import Card, { CardBody, CardFooter } from '../../components/Card/Card';
-import MouseIcon from '../../components/icons/MouseIcon';
-import UserBox from '../../components/icons/UserBox';
+import Card, { CardBody, CardFooter } from "../../components/Card/Card";
+import MouseIcon from "../../components/icons/MouseIcon";
+import UserBox from "../../components/icons/UserBox";
 
 const RenderBroadCastItem = ({ title, data, slug, children, ...rest }) => {
   return (
     <div className="col-span-12 md:col-span-6 lg:col-span-4" {...rest}>
-      <Card title={title} className="px-0 min-h-[250px]" titleClass={'px-5 text-xl mb-0 font-oxigens'}>
+      <Card
+        title={title}
+        className="px-0 min-h-[250px]"
+        titleClass={"px-5 text-xl mb-0 font-oxigens"}>
         {rest?.link ? (
           <div className="px-5  mb-4">
             <p className="text-ellipsis overflow-hidden">
@@ -21,7 +24,7 @@ const RenderBroadCastItem = ({ title, data, slug, children, ...rest }) => {
             </p>
           </div>
         ) : null}
-        <CardBody className={'flex-auto'}>
+        <CardBody className={"flex-auto"}>
           {children ? (
             children
           ) : (
@@ -71,13 +74,13 @@ const RenderBroadCastItem = ({ title, data, slug, children, ...rest }) => {
           ) : (
             <div className="bg-primary bg-opacity-[85%] grid grid-cols-2 divide-x divide-secondary divide-opacity-40">
               <NavLink
-                to={`/${slug}/view/${rest?.id}`}
+                to={`/form/view/${rest?.id}`}
                 className="p-4 font-bold text-white text-center">
-                Laporan{' '}
+                Laporan{" "}
               </NavLink>
               <NavLink
                 className="p-4 font-bold text-white text-center"
-                to={`/${slug}/edit/${rest?.id}`}>
+                to={`/${slug}/add/${rest?.id}`}>
                 Edit Form
               </NavLink>
             </div>
@@ -89,6 +92,6 @@ const RenderBroadCastItem = ({ title, data, slug, children, ...rest }) => {
 };
 
 RenderBroadCastItem.defaultProps = {
-  slug: 'form',
+  slug: "form",
 };
 export default RenderBroadCastItem;

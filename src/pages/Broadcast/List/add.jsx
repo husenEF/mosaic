@@ -1,12 +1,12 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-import { DEFAULT_FORMAT, formatDate } from '../../../utils/dateTimeFormat';
-import Button from '../../../components/button/button';
-import Card, { CardBody, CardFooter } from '../../../components/Card/Card';
-import DatePicker from '../../../components/Datepicker';
-import BaseInput from '../../../components/input/BaseInput';
+import { DEFAULT_FORMAT, formatDate } from "../../../utils/dateTimeFormat";
+import Button from "../../../components/button/button";
+import Card, { CardBody, CardFooter } from "../../../components/Card/Card";
+import DatePicker from "../../../components/Datepicker";
+import BaseInput from "../../../components/input/BaseInput";
 
-import { DummyContact } from '../../../data/dummyContact';
+import { DummyContact } from "../../../data/dummyContact";
 
 const AddNewList = () => {
   const navigate = useNavigate();
@@ -58,37 +58,39 @@ const AddNewList = () => {
                 </h3>
               </div>
               <div className="col-span-12 md:col-span-9 md:justify-end flex">
-                <Button className="mr-2 " title={'Export'} />
+                <Button className="mr-2 " title={"Export"} />
                 <DatePicker />
                 <BaseInput
                   placeholder="Search then enter"
                   className="w-auto min-w-0"
                 />
               </div>
-              <table className="w-full divide-y divide-gray-200 overflow-hidden rounded-10 text-left text-sm table col-span-12">
-                <thead className="vtl-thead">
-                  <tr className="bg-gray-50 text-gray-500   ">
-                    <th className="py-2 px-4 font-medium">Name </th>
-                    <th className="py-2 px-4 font-medium">Phone </th>
-                    <th className="py-2 px-4 font-medium">Status </th>
-                    <th className="py-2 px-4 font-medium">Updated at </th>
-                  </tr>
-                </thead>
-                <tbody className="bg-gray-50">
-                  {DummyContact.map((e) => (
-                    <tr key={e.id}>
-                      <td className="px-4 py-2">{e.fullName}</td>
-                      <td className="px-4 py-2">{e.phone}</td>
-                      <td className="px-4 py-2">
-                        {e?.status ? 'subscribed' : 'un-subscribed'}
-                      </td>
-                      <td className="px-4 py-2">
-                        {formatDate(e?.updateAt, DEFAULT_FORMAT)}
-                      </td>
+              <div className="overflow-x-auto col-span-12 rounded-10">
+                <table className="w-full divide-y divide-gray-200 overflow-hidden text-left text-sm table ">
+                  <thead className="vtl-thead">
+                    <tr className="bg-gray-50 text-gray-500   ">
+                      <th className="py-2 px-4 font-medium">Name </th>
+                      <th className="py-2 px-4 font-medium">Phone </th>
+                      <th className="py-2 px-4 font-medium">Status </th>
+                      <th className="py-2 px-4 font-medium">Updated at </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="bg-gray-50">
+                    {DummyContact.map((e) => (
+                      <tr key={e.id}>
+                        <td className="px-4 py-2">{e.fullName}</td>
+                        <td className="px-4 py-2">{e.phone}</td>
+                        <td className="px-4 py-2">
+                          {e?.status ? "subscribed" : "un-subscribed"}
+                        </td>
+                        <td className="px-4 py-2">
+                          {formatDate(e?.updateAt, DEFAULT_FORMAT)}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </CardBody>
           </Card>
         </div>
